@@ -127,11 +127,7 @@ $Date=$query->fetchColumn();
 							  <div class="dropdown-divider"></div>
 							  <a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
 							  <div class="dropdown-divider"></div>
-							  <div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
-							  <div class="dropdown-divider"></div>
-							  <a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
-							  <div class="dropdown-divider"></div>
+			
 							  <a class="dropdown-item" href="http://localhost/GETPET/web/Dashboard.php" style="color:black;"><t style="margin-left: 10px;">Log out</t></a>
 						</div></li>
                     </ul>
