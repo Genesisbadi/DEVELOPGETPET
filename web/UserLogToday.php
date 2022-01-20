@@ -109,9 +109,12 @@ $Date=$query->fetchColumn();
 							<a href="#activity" class="scroll">Request</a>
 						</li>
 						<li style = "width:140px;">
+<<<<<<< HEAD
 							<a href="" class="scroll">Message</a>
 						</li>
 						<li style = "width:140px;">
+=======
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 							<a href="" class="scroll">Donations</a>
 						</li>
 						<li class="nav-item" style = "width:90px;"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
@@ -146,6 +149,10 @@ $Date=$query->fetchColumn();
 <tr>
 </tr> 
 <tr>
+<<<<<<< HEAD
+=======
+<th style="text-align:center; padding-right:5px;">Select</br>
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 <th style="text-align:center;" width="10%">ID</th>
 <th style="text-align:center;" width="30%">Organization Name/First Name</th>
 <th style="text-align:center;" width="30%">Organization Manager/Last Name</th>
@@ -159,7 +166,11 @@ $Date=$query->fetchColumn();
 
 <tbody>
 <?php
+<<<<<<< HEAD
 $sql="SELECT * from login WHERE (Date) = (CURDATE())";
+=======
+$sql="SELECT * from registered";
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 $query=$dbh->prepare($sql);
 $query->execute();
 $results=$query->fetchALL(PDO::FETCH_OBJ);
@@ -170,6 +181,10 @@ if($query->rowCount()>0)
   {
     ?>
 <tr>
+<<<<<<< HEAD
+=======
+<td style="text-align:center;"><input type="checkbox" class="checkItem" value="<?php echo htmlentities($result->ID)?>" name="ID[]"></td>
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 <td><?php echo htmlentities($result->ID);?></td>
 <td><?php echo htmlentities($result->OrganizationNameOrFirstname);?></td>
 <td><?php echo htmlentities($result->OrganizationManagerOrLastname);?></td>

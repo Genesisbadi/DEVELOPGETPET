@@ -109,9 +109,12 @@ $Date=$query->fetchColumn();
 							<a href="#activity" class="scroll">Request</a>
 						</li>
 						<li style = "width:140px;">
+<<<<<<< HEAD
 							<a href="" class="scroll">Message</a>
 						</li>
 						<li style = "width:140px;">
+=======
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 							<a href="" class="scroll">Donations</a>
 						</li>
 						<li class="nav-item" style = "width:90px;"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
@@ -180,7 +183,11 @@ if($query->rowCount()>0)
 <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($result->Picture).'" width="75"; height="80">';?></td>
 <td><?php echo htmlentities($result->Email);?></td>
 <td><?php echo htmlentities($result->Role);?></td>                                  
+<<<<<<< HEAD
 <td><input type="submit" name="delete" value="Delete" name="ID[]" onclick="return confirm('Are you sure do you want to DELETE this data entry?')" class="btn btn-danger"></td> 
+=======
+<td><input type="submit" name="delete" value="Delete" name="ID[]" onclick="return confirm('Are you sure you want to delete this data?')" class="btn btn-danger"></td> 
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 </tr>
 <?php $cnt=$cnt+1;}} ?>
 </tbody>

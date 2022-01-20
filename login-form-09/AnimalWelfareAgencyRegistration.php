@@ -130,7 +130,8 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 					</div><br>
           <div style="text-align: center" class="wrap-input100 validate-input">
                         <a style="margin-left:-160px;">Upload Logo</a><br><br>
-                        <input type="file" name="Logo" id="Logo" style="width:250px;height:40px;border:none;" placeholder="Upload Logo">
+                        <input type="file" name="Logo" id="Logo" 
+                        style="width:250px;height:40px;border:none;" placeholder="Upload Logo">
 					</div><br>
                     
 					<div  style="text-align: center" class="wrap-input100 validate-input">

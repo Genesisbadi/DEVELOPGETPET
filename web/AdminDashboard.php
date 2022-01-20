@@ -104,12 +104,18 @@ $Date=$query->fetchColumn();
 						</li>
 						<li style = "width:160px;">
 							<a href="#activity" class="scroll">Activity Log</a>
+<<<<<<< HEAD
 						</li>
 						<li style = "width:160px;">
 							<a href="#activity" class="scroll">Request</a>
 						</li>
 						<li style = "width:140px;">
 							<a href="" class="scroll">Message</a>
+=======
+						</li>
+						<li style = "width:160px;">
+							<a href="#activity" class="scroll">Request</a>
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 						</li>
 						<li style = "width:140px;">
 							<a href="" class="scroll">Donations</a>
@@ -119,11 +125,19 @@ $Date=$query->fetchColumn();
 							  <img src="images/logo.png" alt="" style="width:80px;height:80px;margin-left: 60px;margin-top: 20px;border-radius: 50%; border:1px solid silver;" />
 							  <div class="dropdown-divider"></div>
 							  <a class="dropdown-item" href="#"style="color:black;"><div style="text-align: center"><t>Admin</t></div></a>
+<<<<<<< HEAD
 							  <div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
 							  <div class="dropdown-divider"></div>
 							  <a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
 							  <div class="dropdown-divider"></div>
+=======
+							  <div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
+							  <div class="dropdown-divider"></div>
+							  <a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
+							  <div class="dropdown-divider"></div>
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 							  <a class="dropdown-item" href="http://localhost/GETPET/web/Dashboard.php" style="color:black;"><t style="margin-left: 10px;">Log out</t></a>
 						</div></li>
                     </ul>
@@ -133,7 +147,11 @@ $Date=$query->fetchColumn();
 	</div>
 	<!-- //sticky navigation -->
 
+<<<<<<< HEAD
 	<!-- UserActivityLog -->
+=======
+	<!-- Total -->
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 	<div class="services" id="activity">
 	<form class="login100-form validate-form" method="post">
 		<div class="container">
@@ -216,7 +234,11 @@ $Date=$query->fetchColumn();
 		</div>
 		</form>
 	</div><br><br><br><br><br>
+<<<<<<< HEAD
 	<!-- //UserActivityLog -->
+=======
+	<!-- //Total -->
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
    
 	<!-- Pet Owner/Rescuer
 	<div class="PetOwnerOrRescuer" id="PetAdopter"><br><br>
@@ -403,7 +425,11 @@ if(isset($_POST['insert']))
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
+<<<<<<< HEAD
 							<a href="mailto:support@company.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
+=======
+							<a href="mailto:king30cinco@gmail.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
 						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
@@ -411,7 +437,11 @@ if(isset($_POST['insert']))
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
+<<<<<<< HEAD
 							<a href="mailto:support@company.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
+=======
+							<a href="mailto:king30cinco@gmail.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
+>>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
 						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
