@@ -278,7 +278,7 @@ if($query->rowCount()>0)
                     </ul>
 				</div>
 			</div>
-		</nav>
+		</nav> 
 	</div>
 	<!-- //sticky navigation -->
 

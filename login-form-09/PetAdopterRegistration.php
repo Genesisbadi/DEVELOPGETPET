@@ -1,4 +1,3 @@
-<<<<<<< HEAD
   <?php
   session_start();
   include('C:\xampp\htdocs\GETPET\includes\config.php');
@@ -171,7 +170,7 @@
       <script src="js/main.js"></script>
     </body>
   </html>
-=======
+  
 <?php
 session_start();
 include('C:\xampp\htdocs\GETPET\includes\config.php');
@@ -344,4 +343,3 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
     <script src="js/main.js"></script>
   </body>
 </html>
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b

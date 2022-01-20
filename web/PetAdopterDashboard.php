@@ -259,10 +259,7 @@ if($query->rowCount()>0)
 							  <img src="images/default_profile.png" alt="" style="width:80px;height:80px;margin-left: 60px;margin-top: 20px;border-radius: 50%;" />
 							  <div class="dropdown-divider"></div>
 							  <a class="dropdown-item" href="" data-toggle="modal" data-target="#Profile" style="color:black;"><div style="text-align: center"><t><?php echo ($result->Firstname);?> <?php echo ($result->Lastname);?></div></t></a>
-<<<<<<< HEAD:web/PetAdopterDashboard.php
 							  <div style="text-align: center; margin-top:-30px;"><t ><?php echo ($result->Role);?></t></div>
-=======
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b:web/PetOwnerOrRescuerDashboard.php
 							  <div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="" data-toggle="modal" data-target="#Profile" style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
 							  <div class="dropdown-divider"></div>

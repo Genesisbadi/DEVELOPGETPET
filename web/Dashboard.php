@@ -547,17 +547,14 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 					<h4>
 						<i class="fa fa-envelope-o" aria-hidden="true"></i>G-MAIL</h4>
 					<p>
-<<<<<<< HEAD
 						<a href="mailto:info@example.com">GetPet@gmail.com</a>
 					</p>
 					<p>
 						<a href="mailto:info@example.com">WeAreGetPet@gmail.com</a>
-=======
 						<a href="mailto:king30cinco@gmail.com">GetPet@gmail.com</a>
 					</p>
 					<p>
 						<a href="mailto:king30cinco@gmail.com">WeAreGetPet@gmail.com</a>
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 					</p>
 				</div>
 			</div>
