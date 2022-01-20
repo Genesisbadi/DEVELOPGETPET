@@ -146,10 +146,7 @@ $Date=$query->fetchColumn();
 <tr>
 </tr> 
 <tr>
-<<<<<<< HEAD
-=======
 <th style="text-align:center; padding-right:5px;">Select</br>
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 <th style="text-align:center;" width="10%">ID</th>
 <th style="text-align:center;" width="30%">Organization Name/First Name</th>
 <th style="text-align:center;" width="30%">Organization Manager/Last Name</th>
