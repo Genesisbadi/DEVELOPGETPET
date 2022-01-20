@@ -177,7 +177,7 @@ if($query->rowCount()>0)
 <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($result->Picture).'" width="75"; height="80">';?></td>
 <td><?php echo htmlentities($result->Email);?></td>
 <td><?php echo htmlentities($result->Role);?></td>                                  
-<td><input type="submit" name="delete" value="Delete" name="ID[]" onclick="return confirm('Are you sure you want to Deny the request!')" class="btn btn-danger"></td> 
+<td><input type="submit" name="delete" value="Delete" name="ID[]" onclick="return confirm('Are you sure you want to delete this data?')" class="btn btn-danger"></td> 
 </tr>
 <?php $cnt=$cnt+1;}} ?>
 </tbody>
