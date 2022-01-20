@@ -110,10 +110,7 @@ $Date=$query->fetchColumn();
 						</li>
 						<li style = "width:140px;">
 							<a href="" class="scroll">Message</a>
-						</li>
-						<li style = "width:160px;">
-							<a href="#activity" class="scroll">Request</a>
-						</li>
+						</li>						
 						<li style = "width:140px;">
 							<a href="" class="scroll">Donations</a>
 						</li>
