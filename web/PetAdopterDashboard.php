@@ -1,9 +1,8 @@
 <?php 
 session_start();
 include('C:\xampp\htdocs\GETPET\includes\config.php');
-echo $_SESSION['ID'];
 $ID=$_SESSION['ID'];
-$sql = "SELECT * from pet_owner_rescuer where ID=:ID";
+$sql = "SELECT * from pet_adopter where ID=:ID";
 $query=$dbh->prepare($sql);
 $query->bindParam(':ID',$ID,PDO::PARAM_STR);
 $query->execute();
@@ -18,11 +17,95 @@ if($query->rowCount()>0)
 <?php
 ?>
 <?php }} ?>
+<?php
+if(isset($_POST['update']))
+{
+$OrganizationNameOrFirstname=($_POST['Firstname']);
+$OrganizationManagerOrLastname=($_POST['Lastname']);
+$AccountContactNo=($_POST['ContactNo']);
+$AccountAddress=($_POST['Address']);
+$AccountEmail=($_POST['Email']);
+$AccountUsername=($_POST['Username']);
+$AccountPassword=($_POST['Password']);
+
+$sql="update registered set OrganizationNameOrFirstname=:Firstname,OrganizationManagerOrLastname=:Lastname,ContactNo=:ContactNo,Address=:Address,Email=:Email,Username=:Username,Password=:Password where ID=:ID";
+$query=$dbh->prepare($sql);
+$query->bindParam(':ID',$ID,PDO::PARAM_STR);  
+$query->bindParam(':Firstname',$OrganizationNameOrFirstname,PDO::PARAM_STR);
+$query->bindParam(':Lastname',$OrganizationManagerOrLastname,PDO::PARAM_STR);
+$query->bindParam(':ContactNo',$AccountContactNo,PDO::PARAM_STR);
+$query->bindParam(':Address',$AccountAddress,PDO::PARAM_STR);
+$query->bindParam(':Email',$AccountEmail,PDO::PARAM_STR);
+$query->bindParam(':Username',$AccountUsername,PDO::PARAM_STR);
+$query->bindParam(':Password',$AccountPassword,PDO::PARAM_STR);
+$query->execute();
+
+$Firstname=($_POST['Firstname']);
+$Lastname=($_POST['Lastname']);
+$ContactNo=($_POST['ContactNo']);
+$Address=($_POST['Address']);
+$Email=($_POST['Email']);
+$Username=($_POST['Username']);
+$Password=($_POST['Password']);
+
+$sql1="update pet_adopter set Firstname=:Firstname,Lastname=:Lastname,ContactNo=:ContactNo,Address=:Address,Email=:Email,Username=:Username,Password=:Password where ID=:ID";
+$query1=$dbh->prepare($sql1); 
+$query1->bindParam(':ID',$ID,PDO::PARAM_STR); 
+$query1->bindParam(':Firstname',$Firstname,PDO::PARAM_STR);
+$query1->bindParam(':Lastname',$Lastname,PDO::PARAM_STR);
+$query1->bindParam(':ContactNo',$ContactNo,PDO::PARAM_STR);
+$query1->bindParam(':Address',$Address,PDO::PARAM_STR);
+$query1->bindParam(':Email',$Email,PDO::PARAM_STR);
+$query1->bindParam(':Username',$Username,PDO::PARAM_STR);
+$query1->bindParam(':Password',$Password,PDO::PARAM_STR);
+$query1->execute();
+
+$OrganizationNameOrFirstname=($_POST['Firstname']);
+$OrganizationManagerOrLastname=($_POST['Lastname']);
+$AccountContactNo=($_POST['ContactNo']);
+$AccountAddress=($_POST['Address']);
+$AccountEmail=($_POST['Email']);
+$AccountUsername=($_POST['Username']);
+$AccountPassword=($_POST['Password']);
+
+$sql3="update login set OrganizationNameOrFirstname=:Firstname,OrganizationManagerOrLastname=:Lastname,ContactNo=:ContactNo,Address=:Address,Email=:Email,Username=:Username,Password=:Password where ID=:ID";
+$query3=$dbh->prepare($sql3); 
+$query3->bindParam(':ID',$ID,PDO::PARAM_STR);
+$query3->bindParam(':Firstname',$OrganizationNameOrFirstname,PDO::PARAM_STR);
+$query3->bindParam(':Lastname',$OrganizationManagerOrLastname,PDO::PARAM_STR);
+$query3->bindParam(':ContactNo',$AccountContactNo,PDO::PARAM_STR);
+$query3->bindParam(':Address',$AccountAddress,PDO::PARAM_STR);
+$query3->bindParam(':Email',$AccountEmail,PDO::PARAM_STR);
+$query3->bindParam(':Username',$AccountUsername,PDO::PARAM_STR);
+$query3->bindParam(':Password',$AccountPassword,PDO::PARAM_STR);
+$query3->execute();
+{
+echo '<script>alert("Your Account Updated Successfully!!!")</script>';
+$ID=$_SESSION['ID'];
+$sql = "SELECT * from pet_adopter where ID=:ID";
+$query=$dbh->prepare($sql);
+$query->bindParam(':ID',$ID,PDO::PARAM_STR);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount()>0)
+{
+  foreach($results as $result)
+  {
+    ?>
+                              
+<p></p>
+<?php
+?>
+<?php }}
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-    <title>GetPet</title>
+	<title>GetPet</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -58,12 +141,12 @@ if($query->rowCount()>0)
 
 <body>
 	<div class="w3l-main" id="home">
-	<div class="container">
+		<div class="container">
 			<!-- header -->
 			<div class="header">
 				<div class="logo" style="width:200px;height:200px;">
 					<h1>
-						<a href="http://localhost/GETPET/web/PetOwnerOrRescuerDashboard.php">
+						<a href="http://localhost/GETPET/web/PetAdopterDashboard.php">
 							<img class="logo-img center-block" src="images/Logo/Logo.png" alt="" style="width:250px;height:250px;margin-left: -60px;margin-top: -50px;" />
 						</a>
 					</h1>
@@ -71,6 +154,7 @@ if($query->rowCount()>0)
 
 				<div class="clearfix"> </div>
 			</div>
+			
 			<!-- //header -->
 		</div>
 		<!-- Slider -->
@@ -85,7 +169,7 @@ if($query->rowCount()>0)
 										<h3>we provide
 											<span>care</span> that your
 											<span>pet</span> deserves!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
+										<p>A comprehensive guide to dog & cat care to make your pet feel your love</p>
 									</div>
 								</div>
 							</div>
@@ -99,7 +183,7 @@ if($query->rowCount()>0)
 										<h3>you can show your
 											<span>love</span> to your
 											<span>pet</span>!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
+											<p>A comprehensive guide to dog & cat care to make your pet feel your love</p>
 									</div>
 								</div>
 							</div>
@@ -113,7 +197,7 @@ if($query->rowCount()>0)
 										<h3>we provide
 											<span>care</span> that your
 											<span>pet</span> deserves!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
+											<p>A comprehensive guide to dog & cat care to make your pet feel your love</p>
 									</div>
 								</div>
 							</div>
@@ -127,7 +211,7 @@ if($query->rowCount()>0)
 										<h3>you can show your
 											<span>love</span> to your
 											<span>pet</span>!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
+											<p>A comprehensive guide to dog & cat care to make your pet feel your love</p>
 									</div>
 								</div>
 							</div>
@@ -155,36 +239,31 @@ if($query->rowCount()>0)
 				</div>
 				<div class='collapse navbar-collapse'>
 					<ul>
-						<li>
-							<a href="http://localhost/GETPET/web/PetOwnerOrRescuerDashboard.php">Home</a>
+						<li style = "width:150px;">
+							<a href="http://localhost/GETPET/web/PetAdopterDashboard.php">Home</a>
 						</li>
-						<li>
+						<li style = "width:150px;">
 							<a href="#about" class="scroll">About Us</a>
 						</li>
-						<li>
+						<li style = "width:150px;">
 							<a href="#services" class="scroll">Services</a>
 						</li>
-						<li>
-							<a href="#blog" class="scroll">Our Blog</a>
-						</li>
-						<li>
+						<li style = "width:150px;">
 							<a href="#team" class="scroll">Our Team</a>
 						</li>
-						<li>
-							<a href="#gallery" class="scroll">Gallery</a>
-						</li>
-						<li>
+						<li style = "width:150px;">
 							<a href="#contact" class="scroll">Contact Us</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
+						<li class="nav-item" style = "width:150px;"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
 							<div class="dropdown-menu dropdown-menu-right" style="margin-right: 35px;width:200px;">
 							  <img src="images/default_profile.png" alt="" style="width:80px;height:80px;margin-left: 60px;margin-top: 20px;border-radius: 50%;" />
 							  <div class="dropdown-divider"></div>
-							  <a class="dropdown-item" href="#"style="color:black;"><div style="text-align: center"><t><?php echo ($result->Firstname);?> <?php echo ($result->Lastname);?></div></t></a>
+							  <a class="dropdown-item" href="" data-toggle="modal" data-target="#Profile" style="color:black;"><div style="text-align: center"><t><?php echo ($result->Firstname);?> <?php echo ($result->Lastname);?></div></t></a>
+							  <div style="text-align: center; margin-top:-30px;"><t ><?php echo ($result->Role);?></t></div>
 							  <div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
+							<a class="dropdown-item" href="" data-toggle="modal" data-target="#Profile" style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
 							  <div class="dropdown-divider"></div>
-							  <a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
+							  <a class="dropdown-item" href="" data-toggle="modal" data-target="#Settings" style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
 							  <div class="dropdown-divider"></div>
 							  <a class="dropdown-item" href="http://localhost/GETPET/web/Dashboard.php" style="color:black;"><t style="margin-left: 10px;">Log out</t></a>
 						</div></li>
@@ -195,51 +274,34 @@ if($query->rowCount()>0)
 	</div>
 	<!-- //sticky navigation -->
 
-	<!-- ModalPM -->
-	<div class="modal fade" id="PM" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<div class="modal-info">
-						<h4>Project Manager</h4>
-						<img src="images/g2.jpg" alt=" " class="img-responsive" />
-						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-						<p class="para-agileits-w3layouts">Duis sit amet nisi quis leo fermentum vestibulum vitae eget augue. Nulla quam nunc, vulputate id urna at, tempor tincidunt
-							metus. Sed feugiat quam nec mauris mattis malesuada.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //ModalPM -->
-
-
 	<!-- welcome -->
 	<div class="about" id="about">
 		<div class="container">
-			<h3 class="agile-title">Welcome</h3>
+			<h3 class="agile-title">Welcome To GetPet</h3>
 			<div class="about-top w3ls-agile">
 				<div class="col-md-6 red">
-					<img class="img-responsive" src="images/ab.jpg" alt="">
+					<img class="img-responsive" src="images/dc.jpg" alt="">
 				</div>
 				<div class="col-md-6 come">
 					<div class="about-wel">
 						<h5>A Few Words About Our
-							<span>Cat Life</span>
+							<span>GetPet</span>
 						</h5>
-						<p>Masagni dolores eoquie int Basmodi temporant, ut laboreas dolore magnam aliquam kuytase uaeraquis autem vel eum iure
-							reprehend.Unicmquam eius, Basmodi temurer sehsMunim.</p>
+						<p>“Such short little lives our pets have to spend with us, and they spend most of it waiting for us to come home each day. 
+							It is amazing how much love and laughter they bring into our lives and even how much closer we become with each other because of them.”</p>
 						<ul>
+						    <li>
+								<i class="glyphicon glyphicon-ok"></i>Pet Health Monitoring</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Cat health and Care</li>
+								<i class="glyphicon glyphicon-ok"></i>Animal Care Tips</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Cat grooming</li>
+								<i class="glyphicon glyphicon-ok"></i>Donation and Volunteers</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Food for cats</li>
+								<i class="glyphicon glyphicon-ok"></i>Animal help Services</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Cat behavior</li>
+								<i class="glyphicon glyphicon-ok"></i>Post Pets for Adoption</li>
+							<li>
+								<i class="glyphicon glyphicon-ok"></i>Market Place</li>
 						</ul>
 					</div>
 					<div class="button-styles">
@@ -252,6 +314,14 @@ if($query->rowCount()>0)
 		</div>
 	</div>
 	<!-- //welcome -->
+	
+	<!-- Login -->
+	
+	<!-- //Login -->
+
+	<!-- Signup -->
+	
+	<!-- //Signup -->
 
 	<!-- middle slider -->
 	<div class="w3agile-spldishes">
@@ -260,19 +330,19 @@ if($query->rowCount()>0)
 				<!-- Owl-Carousel -->
 				<div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
 					<a class="item g1">
-						<img class="lazyOwl" src="images/m1.jpg" title="Cat Life" alt="" />
+						<img class="lazyOwl" src="images/d1.jpg" title="Cat Life" alt="" />
 					</a>
 					<a class="item g1">
 						<img class="lazyOwl" src="images/m2.jpg" title="Cat Life" alt="" />
 					</a>
 					<a class="item g1">
-						<img class="lazyOwl" src="images/m3.jpg" title="Cat Life" alt="" />
+						<img class="lazyOwl" src="images/d3.jpg" title="Cat Life" alt="" />
 					</a>
 					<a class="item g1">
 						<img class="lazyOwl" src="images/m4.jpg" title="Cat Life" alt="" />
 					</a>
 					<a class="item g1">
-						<img class="lazyOwl" src="images/m5.jpg" title="Cat Life" alt="" />
+						<img class="lazyOwl" src="images/d5.jpg" title="Cat Life" alt="" />
 					</a>
 					<a class="item g1">
 						<img class="lazyOwl" src="images/m6.jpg" title="Cat Life" alt="" />
@@ -287,7 +357,7 @@ if($query->rowCount()>0)
 	<!-- middle section -->
 	<div class="middle-w3l">
 		<div class="container">
-			<h2>Get to know everything about your cat!</h2>
+		<h2><div style="border:solid #00cdc1; outline:#00cdc1 solid 1px; color: black; background: #ffffff; opacity: .6;">Get to know everything about your pets!</div></h2>
 			<div class="button-styles">
 				<a href="#contact" class="button3-w3l scroll">Contact Us</a>
 			</div>
@@ -304,7 +374,7 @@ if($query->rowCount()>0)
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/c1.jpg" alt=" " class="img-responsive" />
+							<img src="images/b1.jpg" alt=" " class="img-responsive" />
 						</div>
 					</div>
 					<fieldset>
@@ -328,7 +398,7 @@ if($query->rowCount()>0)
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/c3.jpg" alt=" " class="img-responsive" />
+							<img src="images/b3.jpg" alt=" " class="img-responsive" />
 						</div>
 					</div>
 					<fieldset>
@@ -355,7 +425,7 @@ if($query->rowCount()>0)
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/c5.jpg" alt=" " class="img-responsive" />
+							<img src="images/b5.jpg" alt=" " class="img-responsive" />
 						</div>
 					</div>
 					<fieldset>
@@ -382,115 +452,13 @@ if($query->rowCount()>0)
 			<img src="images/cat11.png" alt="" />
 		</div>
 		<div class="w3l-img-side w3l-img-side2">
-			<img src="images/cat1.png" alt="" />
+			<img src="images/dog1.jpg" alt="" />
 		</div>
 	</div>
 	<!-- //services -->
 
 	<!-- blog -->
-	<div class="blog" id="blog">
-		<div class="container">
-			<h3 class="agile-title">Our Blog</h3>
-			<div class="col-md-5 col-xs-6 blog-grids">
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Jan</p>
-						<span>18</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>22</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>15</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-5 col-xs-6 blog-grids">
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Jan</p>
-						<span>26</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>06</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>12</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="blog-grids mid-blog-agile">
-			<img src="images/cat2.png" class="img-responsive" alt="">
-		</div>
-	</div>
+	
 	<!-- Modal5 -->
 	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
 		<div class="modal-dialog">
@@ -510,6 +478,116 @@ if($query->rowCount()>0)
 		</div>
 	</div>
 	<!-- //Modal5 -->
+
+	<!-- ModalProfile -->
+	<div class="modal fade" id="Profile" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-info">
+						<h1 style="text-align: center">Profile</h1 >
+						<img src="images/default_profile.png" alt="" class="img-responsive" style="width:150px;height:150px;margin-left:190px;margin-top: 20px;border-radius: 50%;" /><br>
+						<h3 style="margin-left: 10px;">Full Name:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->Firstname);?>&nbsp<?php echo ($result->Lastname);?></h3><br>
+						<h3 style="margin-left: 10px;">Contact No:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <?php echo ($result->ContactNo);?></h3><br>
+						<h3 style="margin-left: 10px;">Address:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->Address);?></h3><br>
+						<h3 style="margin-left: 10px;">Email:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->Email);?></h3><br>
+						<h3 style="margin-left: 10px;">Username:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp<?php echo ($result->Username);?></h3><br>
+						<h3 style="margin-left: 10px;">Role:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->Role);?></h3><br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //ModalProfile -->
+
+	<!-- ModalSettings -->
+	<div class="modal fade" id="Settings" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+				<form method="post">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-info">
+						<h1 style="text-align: center">Account Settings</h1>
+						<img src="images/default_profile.png" alt="" class="img-responsive" style="width:150px;height:150px;margin-left:190px;margin-top: 20px;border-radius: 50%;" /><br>
+					</div><br>
+					<div style="text-align: center" class="wrap-input100 validate-input">
+					<a style="text-align: center; color: black;">Upload Profile</a>
+	                </div><br>
+                    <div style="text-align: center" class="wrap-input100 validate-input">
+                        <input type="file" name="Picture" id="Logo" style="width:250px;height:40px;border:none;margin-left:160px;" placeholder="Upload Logo">
+					</div><br>
+					<div style="text-align: center" class="wrap-input100 validate-input">
+					    <input type="hidden" name="ID" value="<?php echo ( $result->ID);?>" required = "required" class="form-control" id="success">
+					</div><br>
+					<div style="text-align: center" class="wrap-input100 validate-input">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Firstname" required="required" value="<?php echo ($result->Firstname);?>" placeholder="Organization Name">
+					</div><br>
+					<div style="text-align: center" class="wrap-input100 validate-input">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Lastname" required="required" value="<?php echo ($result->Lastname);?>" placeholder="Organization Manager">
+						<span class="focus-input100"></span>
+					</div><br>
+					<div  style="text-align: center" class="wrap-input100 validate-input">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;font-family:Arial;" type="text" name="ContactNo" onkeypress="isInputNumber(event)" maxlength="11" value="<?php echo ($result->ContactNo);?>" placeholder="Contact No.">
+						<script>
+            
+                        function isInputNumber(evt){
+                
+                        var ch = String.fromCharCode(evt.which);
+                
+                        if(!(/[0-9]/.test(ch))){
+                        evt.preventDefault();
+                       }
+					}
+                    </script>
+					</div><br>
+					<div style="text-align: center" class="wrap-input100 validate-input">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Address" required="required" value="<?php echo ($result->Address);?>" placeholder="Address">
+					</div><br>
+					<div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Email" required="required" value="<?php echo ($result->Email);?>" placeholder="Email">
+					</div><br>
+					  <div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid username is required: ex@abc.xyz">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Username" required="required" value="<?php echo ($result->Username);?>" placeholder="Username">
+					</div><br>
+					<div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid username is required: ex@abc.xyz">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="Password" name="Password" required="required" value="<?php echo ($result->Password);?>" placeholder="Password">
+					</div><br><br>
+					<div style="text-align: center">
+						<button  class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="update" type="submit" id="insert" value="Insert">
+							<a style="color:White"> Update </a>
+						</button>
+					</div><br>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //ModalSettings -->
+
+	<!-- ModalPM -->
+	<div class="modal fade" id="PM" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-info">
+						<h4>Project Manager</h4>
+						<img src="images/g2.jpg" alt=" " class="img-responsive" />
+						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+						<p class="para-agileits-w3layouts">Duis sit amet nisi quis leo fermentum vestibulum vitae eget augue. Nulla quam nunc, vulputate id urna at, tempor tincidunt
+							metus. Sed feugiat quam nec mauris mattis malesuada.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //ModalPM -->
+
 	<!-- //blog -->
 
 	<!-- team -->
@@ -519,25 +597,30 @@ if($query->rowCount()>0)
 			<div class="team-agileinfo agileits-w3layouts">
 				<div class="col-md-6 team-grid w3-agileits">
 						<img src="images/team/jennevive.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 90px;" />
-						<h4 style="margin-left: 200px;"> Jennevive Baring</h4>
+						<br>
+						<h4 style="margin-left: 200px;"><a href="#" data-toggle="modal" data-target="#PM">Jennevive Baring</a></h4>
 						<p style="margin-left: 160px;">Project Manager & Hustler</p>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-6 team-grid w3-agileits">
 						<img src="images/team/Genesis.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 50px;" />
-						<h4 style="margin-left: 170px;">Genesis Tagsip</h4>
+						<br>
+						<h4 style="margin-left: 170px;"><a href="#" data-toggle="modal" data-target="#myModal2">Genesis Tagsip</a></h4>
 						<p style="margin-left: 200px;">Hacker</p>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>
+			    <br><br>	
 				<div class="col-md-6 team-grid w3-agileits">
 						<img src="images/team/Niel.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 90px;"/>
+						<br>
 						<h4 style="margin-left: 225px;">Niel Tatad</h4>
 						<p style="margin-left: 240px;">Tester</p>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-6 team-grid w3-agileits">
 						<img src="images/team/Novelyn.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 50px;" />
+						<br>
 						<h4 style="margin-left: 170px;">Novelyn Vocales</h4>
 						<p style="margin-left: 200px;">Hipster</p>
 					<div class="clearfix"> </div>
@@ -548,7 +631,7 @@ if($query->rowCount()>0)
 	</div>
 	<!-- //team -->
 
-	<!-- Gallery -->
+	<!-- 
 	<div id="gallery" class="gallery">
 		<div class="container">
 			<h3 class="agile-title">Gallery</h3>
@@ -597,7 +680,7 @@ if($query->rowCount()>0)
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<!-- //Gallery -->
+	 -->
 
 	<!-- contact -->
 	<div class="contact" id="contact">
@@ -617,50 +700,50 @@ if($query->rowCount()>0)
 				<div class="address">
 					<h4>
 						<i class="fa fa-map-marker" aria-hidden="true"></i>Location</h4>
-					<p>345 Setwant natrer,</p>
-					<p>Metropolitan, Italy.</p>
+					<p>A. C. Cortes Ave,</p>
+					<p>Mandaue City, 6014 Cebu</p>
 				</div>
 				<div class="phone">
 					<h4>
 						<i class="fa fa-phone" aria-hidden="true"></i>PHONE</h4>
-					<p>+1(401) 1234 567.</p>
-					<p>+1(804) 4261 150.</p>
+					<p>+63 (963) 380-2349.</p>
+					<p>+63 (906) 091-3468.</p>
 				</div>
 				<div class="email">
 					<h4>
-						<i class="fa fa-envelope-o" aria-hidden="true"></i>E-MAIL</h4>
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>G-MAIL</h4>
 					<p>
-						<a href="mailto:info@example.com">Example1@gmail.com</a>
+						<a href="mailto:info@example.com">GetPet@gmail.com</a>
 					</p>
 					<p>
-						<a href="mailto:info@example.com">Example2@gmail.com</a>
+						<a href="mailto:info@example.com">WeAreGetPet@gmail.com</a>
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- map -->
+	<!-- 
 	<div class="map-w3ls">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22702.22744502486!2d11.113366067229226!3d44.662878362361056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fc3eca9065c15%3A0x12ec8a03aadae866!2s40019+Sant&#39;Agata+Bolognese+BO%2C+Italy!5e0!3m2!1sen!2sin!4v1451281303075"
 		    allowfullscreen></iframe>
 	</div>
-	<!-- //map -->
+	 -->
 	<!-- //contact -->
 
 	<!-- footer -->
 	<section class="footer-w3">
 		<div class="container">
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-agile1" data-aos="zoom-in">
-				<h3>Some More</h3>
-				<p class="footer-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed ligula ac metus finibus hendrerit sed at libero. Praesent
-					blandit dignissim elit, vel feugiat nulla porta a. Praesent tellus eros, consectetur quis tortor at, tempor varius quam.
+				<h3>ADOPTING MEANS YOU SAVE A LIFE!</h3>
+				<p class="footer-p1">Too often, shelters euthanize animals due to room constraints, but if more people adopted pets instead of buying them, the number of pets euthanized would lower dramatically.
+						When you adopt, not only do you save your loving new companion, but you make space for other animals who desperately need it, creating a domino effect of goodness.
 				</p>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-mid-w3" data-aos="zoom-in">
 				<h3>Instagram Posts</h3>
 				<div class="agileinfo_footer_grid1">
 					<a href="#">
-						<img src="images/f1.jpg" alt=" " class="img-responsive">
+						<img src="images/dogs1.jpg" alt=" " class="img-responsive">
 					</a>
 				</div>
 				<div class="agileinfo_footer_grid1">
@@ -670,7 +753,7 @@ if($query->rowCount()>0)
 				</div>
 				<div class="agileinfo_footer_grid1">
 					<a href="#">
-						<img src="images/f3.jpg" alt=" " class="img-responsive">
+						<img src="images/dogs3.jpg" alt=" " class="img-responsive">
 					</a>
 				</div>
 				<div class="agileinfo_footer_grid1">
@@ -680,7 +763,7 @@ if($query->rowCount()>0)
 				</div>
 				<div class="agileinfo_footer_grid1">
 					<a href="#">
-						<img src="images/f5.jpg" alt=" " class="img-responsive">
+						<img src="images/dogs5.jpg" alt=" " class="img-responsive">
 					</a>
 				</div>
 				<div class="agileinfo_footer_grid1">
@@ -691,23 +774,23 @@ if($query->rowCount()>0)
 				<div class="clearfix"> </div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-agile1" data-aos="zoom-in">
-				<h3>Latest Tweets</h3>
+				<h3>Follow us also in Twitter</h3>
 				<ul class="tweet-agile">
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:support@company.com">@example</a> sit amet consectetur adipiscing.
-							<a href="#">http://ax.by/zzzz</a>
+							<a href="mailto:support@company.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
+							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
-						<p class="tweet-p2">Posted 3 days ago.</p>
+						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
 					</li>
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:support@company.com">@example</a> sit amet consectetur adipiscing.
-							<a href="#">http://cx.dy/zzzz</a>
+							<a href="mailto:support@company.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
+							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
-						<p class="tweet-p2">Posted 3 days ago.</p>
+						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
 					</li>
 				</ul>
 			</div>
@@ -717,8 +800,8 @@ if($query->rowCount()>0)
 	<!-- copyright -->
 	<div class="w3layouts_copy_right">
 		<div class="container">
-			<p>© 2018 Cat Life. All rights reserved | Design by
-				<a href="http://w3layouts.com">W3layouts.</a>
+			<p>© 2021 GetPet. All rights reserved | Design by
+				<a href="http://w3layouts.com">Team K.W .</a>
 			</p>
 		</div>
 	</div>

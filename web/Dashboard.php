@@ -48,7 +48,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 			<div class="header">
 				<div class="logo" style="width:200px;height:200px;">
 					<h1>
-						<a href="http://localhost/GETPET/web/Dashboard.php">
+						<a href="http://localhost/GETPET/Dashboard.php">
 							<img class="logo-img center-block" src="images/Logo/Logo.png" alt="" style="width:250px;height:250px;margin-left: -60px;margin-top: -50px;" />
 						</a>
 					</h1>
@@ -56,6 +56,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 
 				<div class="clearfix"> </div>
 			</div>
+			
 			<!-- //header -->
 		</div>
 		<!-- Slider -->
@@ -70,7 +71,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 										<h3>we provide
 											<span>care</span> that your
 											<span>pet</span> deserves!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
+										<p>A comprehensive guide to dog & cat care to make your pet feel your love</p>
 									</div>
 								</div>
 							</div>
@@ -84,7 +85,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 										<h3>you can show your
 											<span>love</span> to your
 											<span>pet</span>!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
+											<p>A comprehensive guide to dog & cat care to make your pet feel your love</p>
 									</div>
 								</div>
 							</div>
@@ -98,7 +99,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 										<h3>we provide
 											<span>care</span> that your
 											<span>pet</span> deserves!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
+											<p>A comprehensive guide to dog & cat care to make your pet feel your love</p>
 									</div>
 								</div>
 							</div>
@@ -112,7 +113,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 										<h3>you can show your
 											<span>love</span> to your
 											<span>pet</span>!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
+											<p>A comprehensive guide to dog & cat care to make your pet feel your love</p>
 									</div>
 								</div>
 							</div>
@@ -140,31 +141,37 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 				</div>
 				<div class='collapse navbar-collapse'>
 					<ul>
-						<li style="margin-left:-50px;">
+						<li style = "width:140px;">
 							<a href="http://localhost/GETPET/web/Dashboard.php">Home</a>
 						</li>
-						<li>
+						<li style = "width:140px;">
 							<a href="#about" class="scroll">About Us</a>
 						</li>
-						<li>
+						<li style = "width:140px;">
 							<a href="#services" class="scroll">Services</a>
 						</li>
-						<li>
-							<a href="#blog" class="scroll">Our Blog</a>
-						</li>
-						<li>
+						<li style = "width:140px;">
 							<a href="#team" class="scroll">Our Team</a>
 						</li>
-						<li>
+						<!--<li>
 							<a href="#gallery" class="scroll">Gallery</a>
-						</li>
-						<li>
+						</li>-->
+						<li style = "width:150px;margin-right:30px;">
 							<a href="#contact" class="scroll">Contact Us</a>
-						</li>
-						<li>
-							<div style="border-style:solid;border-color:white;margin-top:10px;margin-bottom:10px;cursor: pointer;">
-							<div  href="http://localhost/GETPET/login-form-09/login.php" style="margin-top:-10px;margin-bottom:-10px"><a href="http://localhost/GETPET/login-form-09/login.php" style ="margin-top:-10px">Login</a></div>
-	                        </div>
+						</li>	
+						<li style = "margin-right:10px;">
+						   <form method="post">
+						    <button  class="login100-form-btn" style="border-style:solid;border-color:white;background-color:#00cdc1;width:130px;height:45px;" name="login">
+							  <div style="color:White;margin-top:-10px"><a style="color:White;text-align:center;"> Login </a></div>
+						    </button>
+							</form>
+							<?php 
+
+                           if(isset($_POST['login']))
+                            {
+								echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/login-form-09/login.php'</script>";
+							}
+							?>
 						</li>
 						<li>
 						<script language="JavaScript">
@@ -172,11 +179,20 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
                          document.getElementById(id).style.display = visibility;
                              }
                             </script>
-							<div style="border-style:solid;border-color:white;margin-top:10px;margin-bottom:10px;cursor: pointer;">
-							<div style="margin-top:-10px;margin-bottom:-10px"><a href="http://localhost/GETPET/login-form-09/SelectRole.php" style ="margin-top:-10px">Signup</a></div>
-	                        </div>
-						</li>
-						
+	
+							<form method="post">
+						    <button  class="login100-form-btn" style="border-style:solid;border-color:white;background-color:#00cdc1;width:130px;height:45px;" name="signup">
+							<div style="color:White;margin-top:-10px"><a style="color:White"> Signup </a></div>
+						    </button>
+							</form>
+							<?php 
+
+                           if(isset($_POST['signup']))
+                            {
+								echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/login-form-09/SelectRole.php'</script>";
+							}
+							?>
+						</li>	
                     </ul>
 				</div>
 			</div>
@@ -187,27 +203,29 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 	<!-- welcome -->
 	<div class="about" id="about">
 		<div class="container">
-			<h3 class="agile-title">Welcome</h3>
+			<h3 class="agile-title">Welcome To GetPet</h3>
 			<div class="about-top w3ls-agile">
 				<div class="col-md-6 red">
-					<img class="img-responsive" src="images/ab.jpg" alt="">
+					<img class="img-responsive" src="images/dc.jpg" alt="">
 				</div>
 				<div class="col-md-6 come">
 					<div class="about-wel">
 						<h5>A Few Words About Our
-							<span>Cat Life</span>
+							<span>GetPet</span>
 						</h5>
-						<p>Masagni dolores eoquie int Basmodi temporant, ut laboreas dolore magnam aliquam kuytase uaeraquis autem vel eum iure
-							reprehend.Unicmquam eius, Basmodi temurer sehsMunim.</p>
+						<p>“Such short little lives our pets have to spend with us, and they spend most of it waiting for us to come home each day. 
+							It is amazing how much love and laughter they bring into our lives and even how much closer we become with each other because of them.”</p>
 						<ul>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Cat health and Care</li>
+								<i class="glyphicon glyphicon-ok"></i>Pet Health Monitoring</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Cat grooming</li>
+								<i class="glyphicon glyphicon-ok"></i>Animal Care Tips</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Food for cats</li>
+								<i class="glyphicon glyphicon-ok"></i>Donation and Volunteers</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Cat behavior</li>
+								<i class="glyphicon glyphicon-ok"></i>Animal help Services</li>
+							<li>
+								<i class="glyphicon glyphicon-ok"></i>Post Pets for Adoption</li>
 						</ul>
 					</div>
 					<div class="button-styles">
@@ -220,242 +238,13 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 		</div>
 	</div>
 	<!-- //welcome -->
-	<?php 
-if(isset($_POST['login']))
-{
-	$Email=$_POST['Email'];
-    $Password=$_POST['Password'];
-
-    $sql = "SELECT * FROM admin WHERE Email = :Email AND Password =:Password";
-    $query = $dbh->prepare($sql);
-    $query->bindParam(':Email', $Email,PDO::PARAM_STR);
-    $query->bindParam(':Password', $Password,PDO::PARAM_STR);
-    $query->execute();
-    $results=$query->fetch(PDO::FETCH_ASSOC);
-    
-
-    if($query->rowCount()>0)
-    {
-
-        session_regenerate_id();
-		$_SESSION['ID'] = $results['ID'];
-
-        echo '<script>alert("Login Successfully!!!")</script>';
-        echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/AdminDashboard.php'</script>";
-
-
-    }
-
-    $sql1 = "SELECT * FROM pet_owner_rescuer WHERE Email = :Email AND Password =:Password";
-    $query1 = $dbh->prepare($sql1);
-    $query1->bindParam(':Email', $Email,PDO::PARAM_STR);
-    $query1->bindParam(':Password', $Password,PDO::PARAM_STR);
-    $query1->execute();
-    $results1=$query1->fetch(PDO::FETCH_ASSOC);
-    
-
-    if($query1->rowCount()>0)
-    {
-
-        session_regenerate_id();
-		$_SESSION['ID'] = $results1['ID'];
-		$_SESSION['Firstname'] = $results1['Firstname'];
-        $_SESSION['Laststname'] = $results1['Laststname'];
-
-        echo '<script>alert("Login Successfully!!!")</script>';
-        echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/PetOwnerOrRescuerDashboard.php'</script>";
-
-
-    }
-
-
-	else 
-    echo '<script>alert("Invalid Account!!!")</script>';
 	
-
-
-
-}
-
-?>
 	<!-- Login -->
-	<div class="modal fade"  data-keyboard="false" data-backdrop="static" id="Login" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content"> 
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size:30px;margin-top:-20px;">&times;</button>
-					<div class="modal-info">
-					<form class="login100-form validate-form" method="post">
-					<img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-left:140px;margin-top:-60px;" alt=" " class="img-responsive"/>
-					<h2 style="text-align:center;margin-top:-40px;">Login to continue</h2>
-					<br><br>
-					<div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Email"  required="required" placeholder="Email">
-					</div>
-					<br>
-					<div  style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="password" name="Password" placeholder="Password" required="required" autocomplete="off">
-					</div><br>
-					<div style="text-align: center" class="flex-sb-m w-full p-t-3 p-b-32">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								Remember me
-							</label>
-						</div>
-					</div><br><br>
-					<div style="text-align: center">
-						<button  class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="login">
-							<a style="color:White"> Login </a>
-						</button>
-					</div><br><br><br><br>
-	                </form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<!-- //Login -->
-<?php 
-if(isset($_POST['PetOwnerOrRescuer']))
-{
-$Firstname=($_POST['Firstname']);
-$Lastname=($_POST['Lastname']);
-$ContactNo=($_POST['ContactNo']);
-$Address=($_POST['Address']);
-$Email=($_POST['Email']);
-$Password=($_POST['Password']);
-$sql="INSERT INTO pet_owner_rescuer(Firstname,Lastname,ContactNo,Address,Email,Password,Role)VALUES(:Firstname,:Lastname,:ContactNo,:Address,:Email,:Password,'PetOwnerOrRescuer')";
-$query=$dbh->prepare($sql); 
-$query->bindParam(':Firstname',$Firstname,PDO::PARAM_STR);
-$query->bindParam(':Lastname',$Lastname,PDO::PARAM_STR);
-$query->bindParam(':ContactNo',$ContactNo,PDO::PARAM_STR);
-$query->bindParam(':Address',$Address,PDO::PARAM_STR);
-$query->bindParam(':Email',$Email,PDO::PARAM_STR);
-$query->bindParam(':Password',$Password,PDO::PARAM_STR);
-$query->execute();
 
-echo '<script>alert("Registered Successfully!!!")</script>';
-echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/UserDashboard.php'</script>";
-}
-
-?>
 	<!-- Signup -->
-
-	<div class="modal fade"  data-keyboard="false" data-backdrop="static" id="SelectRole" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content"> 
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size:30px;margin-top:-20px;">&times;</button>
-					<div class="modal-info">
-					<form class="login100-form validate-form" method="post">
-					<img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-left:140px;margin-top:-60px;" alt=" " class="img-responsive"/><br>
-					<h2 style="text-align:center;margin-top:-40px;">Select Role</h2>
-					<br><br>
-					<div style="text-align: center">
-				    <div style ="background-color:#00cdc1;width:250px;height:40px;padding:10px;margin-left:145px;cursor: pointer;" data-toggle="modal" data-target="#PetOwnerOrRescuer"><a style ="color:White;" >Pet Owner/Rescuer</a></div>
-	                </div><br>
-					<div style="text-align: center">
-						<div style ="background-color:#00cdc1;width:250px;height:40px;padding:10px;margin-left:145px;cursor: pointer;" data-toggle="modal" data-target="#Agency"><a style ="color:White;" >Animal Welfare Agency</a></div>
-					</div><br><br>
-	                </form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade"  data-keyboard="false" data-backdrop="static" id="PetOwnerOrRescuer" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content"> 
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size:30px;margin-top:-20px;">&times;</button>
-					<div class="modal-info">
-					<form class="login100-form validate-form" method="post">
-					<img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-left:140px;margin-top:-60px;" alt=" " class="img-responsive"/>
-					<h2 style="text-align:center;margin-top:-40px;">Pet Owner/Rescuer Registration</h2>
-					<br>
-					<div style="text-align: center" class="wrap-input100 validate-input">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Firstname" placeholder="Firstname">
-					</div><br>
-                    <div style="text-align: center" class="wrap-input100 validate-input">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Lastname" placeholder="Lastname">
-						<span class="focus-input100"></span>
-					</div><br>
-					<div  style="text-align: center" class="wrap-input100 validate-input">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;font-family:Arial;" type="text" name="ContactNo" onkeypress="isInputNumber(event)" maxlength="11" placeholder="Contact No.">
-						<script>
-            
-                        function isInputNumber(evt){
-                
-                        var ch = String.fromCharCode(evt.which);
-                
-                        if(!(/[0-9]/.test(ch))){
-                        evt.preventDefault();
-                       }
-					}
-                    </script>
-					</div><br>
-					<div style="text-align: center" class="wrap-input100 validate-input">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Address" required="required" placeholder="Address">
-					</div><br>
-					<div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Email" required="required" placeholder="Email">
-					</div><br>
-					<div  style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="password" name="Password" required="required" placeholder="Password">
-					</div><br>
-					<div style="text-align: center">
-						<button  class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="PetOwnerOrRescuer">
-							<a style="color:White"> Register </a>
-						</button>
-					</div><br>
-	                </form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade"  data-keyboard="false" data-backdrop="static" id="Agency" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content"> 
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size:30px;margin-top:-20px;">&times;</button>
-					<div class="modal-info">
-					<form class="login100-form validate-form" method="post">
-					<img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-left:140px;margin-top:-60px;" alt=" " class="img-responsive"/>
-					<h2 style="text-align:center;margin-top:-40px;">Animal Welfare Agency Register</h2>
-					<br>
-					<div style="text-align: center" class="wrap-input100 validate-input">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Fname" placeholder="Firstname">
-					</div><br>
-                    <div style="text-align: center" class="wrap-input100 validate-input">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Lname" placeholder="Lastname">
-						<span class="focus-input100"></span>
-					</div><br>
-					<div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Email"  placeholder="Email">
-					</div><br>
-					<div  style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="password" name="Password"  placeholder="Password">
-					</div><br>
-					<div style="text-align: center">
-						<button  cclass="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="register">
-							<a style="color:White"> Register </a>
-						</button>
-					</div><br>
-	                </form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	
 	<!-- //Signup -->
 
 	<!-- middle slider -->
@@ -465,19 +254,19 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 				<!-- Owl-Carousel -->
 				<div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
 					<a class="item g1">
-						<img class="lazyOwl" src="images/m1.jpg" title="Cat Life" alt="" />
+						<img class="lazyOwl" src="images/d1.jpg" title="Cat Life" alt="" />
 					</a>
 					<a class="item g1">
 						<img class="lazyOwl" src="images/m2.jpg" title="Cat Life" alt="" />
 					</a>
 					<a class="item g1">
-						<img class="lazyOwl" src="images/m3.jpg" title="Cat Life" alt="" />
+						<img class="lazyOwl" src="images/d3.jpg" title="Cat Life" alt="" />
 					</a>
 					<a class="item g1">
 						<img class="lazyOwl" src="images/m4.jpg" title="Cat Life" alt="" />
 					</a>
 					<a class="item g1">
-						<img class="lazyOwl" src="images/m5.jpg" title="Cat Life" alt="" />
+						<img class="lazyOwl" src="images/d5.jpg" title="Cat Life" alt="" />
 					</a>
 					<a class="item g1">
 						<img class="lazyOwl" src="images/m6.jpg" title="Cat Life" alt="" />
@@ -492,7 +281,7 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 	<!-- middle section -->
 	<div class="middle-w3l">
 		<div class="container">
-			<h2>Get to know everything about your cat!</h2>
+			<h2><div style="border:solid #00cdc1; outline:#00cdc1 solid 1px; color: black; background: #ffffff; opacity: .6;">Get to know everything about your pets!</div></h2>
 			<div class="button-styles">
 				<a href="#contact" class="button3-w3l scroll">Contact Us</a>
 			</div>
@@ -509,7 +298,7 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/c1.jpg" alt=" " class="img-responsive" />
+							<img src="images/b1.jpg" alt=" " class="img-responsive" />
 						</div>
 					</div>
 					<fieldset>
@@ -533,7 +322,7 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/c3.jpg" alt=" " class="img-responsive" />
+							<img src="images/b3.jpg" alt=" " class="img-responsive" />
 						</div>
 					</div>
 					<fieldset>
@@ -560,7 +349,7 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/c5.jpg" alt=" " class="img-responsive" />
+							<img src="images/b5.jpg" alt=" " class="img-responsive" />
 						</div>
 					</div>
 					<fieldset>
@@ -587,115 +376,12 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 			<img src="images/cat11.png" alt="" />
 		</div>
 		<div class="w3l-img-side w3l-img-side2">
-			<img src="images/cat1.png" alt="" />
+			<img src="images/dog1.jpg" alt="" />
 		</div>
 	</div>
 	<!-- //services -->
 
 	<!-- blog -->
-	<div class="blog" id="blog">
-		<div class="container">
-			<h3 class="agile-title">Our Blog</h3>
-			<div class="col-md-5 col-xs-6 blog-grids">
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Jan</p>
-						<span>18</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>22</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>15</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-5 col-xs-6 blog-grids">
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Jan</p>
-						<span>26</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>06</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>12</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="blog-grids mid-blog-agile">
-			<img src="images/cat2.png" class="img-responsive" alt="">
-		</div>
-	</div>
 	<!-- Modal5 -->
 	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
 		<div class="modal-dialog">
@@ -779,7 +465,7 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 	</div>
 	<!-- //team -->
 
-	<!-- Gallery -->
+	<!-- 
 	<div id="gallery" class="gallery">
 		<div class="container">
 			<h3 class="agile-title">Gallery</h3>
@@ -828,7 +514,7 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<!-- //Gallery -->
+	 -->
 
 	<!-- contact -->
 	<div class="contact" id="contact">
@@ -848,50 +534,50 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 				<div class="address">
 					<h4>
 						<i class="fa fa-map-marker" aria-hidden="true"></i>Location</h4>
-					<p>345 Setwant natrer,</p>
-					<p>Metropolitan, Italy.</p>
+					<p>A. C. Cortes Ave,</p>
+					<p>Mandaue City, 6014 Cebu</p>
 				</div>
 				<div class="phone">
 					<h4>
 						<i class="fa fa-phone" aria-hidden="true"></i>PHONE</h4>
-					<p>+1(401) 1234 567.</p>
-					<p>+1(804) 4261 150.</p>
+					<p>+63 (963) 380-2349.</p>
+					<p>+63 (906) 091-3468.</p>
 				</div>
 				<div class="email">
 					<h4>
-						<i class="fa fa-envelope-o" aria-hidden="true"></i>E-MAIL</h4>
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>G-MAIL</h4>
 					<p>
-						<a href="mailto:info@example.com">Example1@gmail.com</a>
+						<a href="mailto:info@example.com">GetPet@gmail.com</a>
 					</p>
 					<p>
-						<a href="mailto:info@example.com">Example2@gmail.com</a>
+						<a href="mailto:info@example.com">WeAreGetPet@gmail.com</a>
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- map -->
+	<!-- 
 	<div class="map-w3ls">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22702.22744502486!2d11.113366067229226!3d44.662878362361056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fc3eca9065c15%3A0x12ec8a03aadae866!2s40019+Sant&#39;Agata+Bolognese+BO%2C+Italy!5e0!3m2!1sen!2sin!4v1451281303075"
 		    allowfullscreen></iframe>
 	</div>
-	<!-- //map -->
+	 -->
 	<!-- //contact -->
 
 	<!-- footer -->
 	<section class="footer-w3">
 		<div class="container">
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-agile1" data-aos="zoom-in">
-				<h3>Some More</h3>
-				<p class="footer-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed ligula ac metus finibus hendrerit sed at libero. Praesent
-					blandit dignissim elit, vel feugiat nulla porta a. Praesent tellus eros, consectetur quis tortor at, tempor varius quam.
+				<h3>ADOPTING MEANS YOU SAVE A LIFE!</h3>
+				<p class="footer-p1">Too often, shelters euthanize animals due to room constraints, but if more people adopted pets instead of buying them, the number of pets euthanized would lower dramatically.
+						When you adopt, not only do you save your loving new companion, but you make space for other animals who desperately need it, creating a domino effect of goodness.
 				</p>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-mid-w3" data-aos="zoom-in">
 				<h3>Instagram Posts</h3>
 				<div class="agileinfo_footer_grid1">
 					<a href="#">
-						<img src="images/f1.jpg" alt=" " class="img-responsive">
+						<img src="images/dogs1.jpg" alt=" " class="img-responsive">
 					</a>
 				</div>
 				<div class="agileinfo_footer_grid1">
@@ -901,7 +587,7 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 				</div>
 				<div class="agileinfo_footer_grid1">
 					<a href="#">
-						<img src="images/f3.jpg" alt=" " class="img-responsive">
+						<img src="images/dogs3.jpg" alt=" " class="img-responsive">
 					</a>
 				</div>
 				<div class="agileinfo_footer_grid1">
@@ -911,7 +597,7 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 				</div>
 				<div class="agileinfo_footer_grid1">
 					<a href="#">
-						<img src="images/f5.jpg" alt=" " class="img-responsive">
+						<img src="images/dogs5.jpg" alt=" " class="img-responsive">
 					</a>
 				</div>
 				<div class="agileinfo_footer_grid1">
@@ -922,23 +608,23 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 				<div class="clearfix"> </div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-agile1" data-aos="zoom-in">
-				<h3>Latest Tweets</h3>
+				<h3>Follow us also in Twitter</h3>
 				<ul class="tweet-agile">
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:support@company.com">@example</a> sit amet consectetur adipiscing.
-							<a href="#">http://ax.by/zzzz</a>
+							<a href="mailto:support@company.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
+							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
-						<p class="tweet-p2">Posted 3 days ago.</p>
+						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
 					</li>
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:support@company.com">@example</a> sit amet consectetur adipiscing.
-							<a href="#">http://cx.dy/zzzz</a>
+							<a href="mailto:support@company.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
+							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
-						<p class="tweet-p2">Posted 3 days ago.</p>
+						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
 					</li>
 				</ul>
 			</div>
@@ -948,8 +634,8 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 	<!-- copyright -->
 	<div class="w3layouts_copy_right">
 		<div class="container">
-			<p>© 2018 Cat Life. All rights reserved | Design by
-				<a href="http://w3layouts.com">W3layouts.</a>
+			<p>© 2021 GetPet. All rights reserved | Design by
+				<a href="">Team K.W .</a>
 			</p>
 		</div>
 	</div>

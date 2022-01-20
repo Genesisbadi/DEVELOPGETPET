@@ -1,26 +1,71 @@
-<?php 
+<?php
 session_start();
 include('C:\xampp\htdocs\GETPET\includes\config.php');
 if(isset($_POST['insert']))
 {
+$OrganizationNameOrFirstname=($_POST['Firstname']);
+$OrganizationManagerOrLastname=($_POST['Lastname']);
+$AccountContactNo=($_POST['ContactNo']);
+$AccountAddress=($_POST['Address']);
+$AccountEmail=($_POST['Email']);
+$AccountUsername=($_POST['Username']);
+$AccountPassword=($_POST['Password']);
+$sql="INSERT INTO registered(OrganizationNameOrFirstname,OrganizationManagerOrLastname,ContactNo,Address,Email,Username,Password,Role,Date)VALUES(:Firstname,:Lastname,:ContactNo,:Address,:Email,:Username,:Password,'Pet Owner',Now())";
+$query=$dbh->prepare($sql); 
+$query->bindParam(':Firstname',$OrganizationNameOrFirstname,PDO::PARAM_STR);
+$query->bindParam(':Lastname',$OrganizationManagerOrLastname,PDO::PARAM_STR);
+$query->bindParam(':ContactNo',$AccountContactNo,PDO::PARAM_STR);
+$query->bindParam(':Address',$AccountAddress,PDO::PARAM_STR);
+$query->bindParam(':Email',$AccountEmail,PDO::PARAM_STR);
+$query->bindParam(':Username',$AccountUsername,PDO::PARAM_STR);
+$query->bindParam(':Password',$AccountPassword,PDO::PARAM_STR);
+$query->execute();
+
+$sql2="SELECT ID FROM registered ORDER BY ID DESC";
+$query2=$dbh->prepare($sql2);
+$query2->execute();
+
+$ID=$query2->fetchColumn();
+
 $Firstname=($_POST['Firstname']);
 $Lastname=($_POST['Lastname']);
 $ContactNo=($_POST['ContactNo']);
 $Address=($_POST['Address']);
 $Email=($_POST['Email']);
+$Username=($_POST['Username']);
 $Password=($_POST['Password']);
-$sql="INSERT INTO pet_owner_rescuer(Firstname,Lastname,ContactNo,Address,Email,Password,Role)VALUES(:Firstname,:Lastname,:ContactNo,:Address,:Email,:Password,'PetOwnerOrRescuer')";
-$query=$dbh->prepare($sql); 
-$query->bindParam(':Firstname',$Firstname,PDO::PARAM_STR);
-$query->bindParam(':Lastname',$Lastname,PDO::PARAM_STR);
-$query->bindParam(':ContactNo',$ContactNo,PDO::PARAM_STR);
-$query->bindParam(':Address',$Address,PDO::PARAM_STR);
-$query->bindParam(':Email',$Email,PDO::PARAM_STR);
-$query->bindParam(':Password',$Password,PDO::PARAM_STR);
-$query->execute();
+$sql1="INSERT INTO pet_owner(ID,Firstname,Lastname,ContactNo,Address,Email,Username,Password,Role)VALUES($ID,:Firstname,:Lastname,:ContactNo,:Address,:Email,:Username,:Password,'Pet Owner')";
+$query1=$dbh->prepare($sql1);
+$query1->bindParam(':Firstname',$Firstname,PDO::PARAM_STR);
+$query1->bindParam(':Lastname',$Lastname,PDO::PARAM_STR); 
+$query1->bindParam(':ContactNo',$ContactNo,PDO::PARAM_STR);
+$query1->bindParam(':Address',$Address,PDO::PARAM_STR);
+$query1->bindParam(':Email',$Email,PDO::PARAM_STR);
+$query1->bindParam(':Username',$Username,PDO::PARAM_STR);
+$query1->bindParam(':Password',$Password,PDO::PARAM_STR);
+$query1->execute();
+
+$OrganizationNameOrFirstname=($_POST['Firstname']);
+$OrganizationManagerOrLastname=($_POST['Lastname']);
+$AccountContactNo=($_POST['ContactNo']);
+$AccountAddress=($_POST['Address']);
+$AccountEmail=($_POST['Email']);
+$AccountUsername=($_POST['Username']);
+$AccountPassword=($_POST['Password']);
+$sql3="INSERT INTO login(ID,OrganizationNameOrFirstname,OrganizationManagerOrLastname,ContactNo,Address,Email,Username,Password,Role)VALUES($ID,:Firstname,:Lastname,:ContactNo,:Address,:Email,:Username,:Password,'Pet Owner')";
+$query3=$dbh->prepare($sql3); 
+$query3->bindParam(':Firstname',$OrganizationNameOrFirstname,PDO::PARAM_STR);
+$query3->bindParam(':Lastname',$OrganizationManagerOrLastname,PDO::PARAM_STR);
+$query3->bindParam(':ContactNo',$AccountContactNo,PDO::PARAM_STR);
+$query3->bindParam(':Address',$AccountAddress,PDO::PARAM_STR);
+$query3->bindParam(':Email',$AccountEmail,PDO::PARAM_STR);
+$query3->bindParam(':Username',$AccountUsername,PDO::PARAM_STR);
+$query3->bindParam(':Password',$AccountPassword,PDO::PARAM_STR);
+$query3->execute();
 
 echo '<script>alert("Registered Successfully!!!")</script>';
-echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/PetOwnerOrRescuerDashboard.php'</script>";
+echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/Dashboard.php'</script>";
+
 }
 ?>
 <!doctype html>
@@ -67,7 +112,7 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
                 <form class="login100-form validate-form" method="post">
                 <div style="text-align:left;margin-top:-50px;margin-bottom:20px;margin-left:-40px;cursor: pointer;"><a onclick="history.back()" class="signup-image-link" ><u><-Back</u></a></div>
 					      <p style="text-align:center;"><img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-top:-80px;" alt=" " class="img-responsive"/></p>
-                    <h2 style="text-align:center;margin-top:-40px;">Pet Owner/Rescuer Registration</h2>
+                    <h2 style="text-align:center;margin-top:-40px;">Pet Owner Registration</h2>
 					<br>
 					<div style="text-align: center" class="wrap-input100 validate-input">
 						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Firstname" required="required" placeholder="Firstname">
@@ -95,6 +140,9 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 					</div><br>
 					<div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Email" required="required" placeholder="Email">
+					</div><br>
+          <div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid username is required: ex@abc.xyz">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Username" required="required" placeholder="Username">
 					</div><br>
 					<div  style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="password" name="Password" required="required" placeholder="Password">

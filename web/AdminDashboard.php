@@ -1,14 +1,49 @@
-<!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php 
+session_start();
+include('C:\xampp\htdocs\GETPET\includes\config.php');
+$query=$dbh->prepare("SELECT COUNT(ID) FROM pet_owner");
+$query->execute();
+
+$pet_owner=$query->fetchColumn();
+
+?>
+
+<?php
+$query=$dbh->prepare("SELECT COUNT(ID) FROM pet_adopter");
+$query->execute();
+
+$pet_adopter=$query->fetchColumn();
+
+?>
+
+<?php
+$query=$dbh->prepare("SELECT COUNT(ID) FROM animal_welfare_agency");
+$query->execute();
+
+$animal_welfare_agency=$query->fetchColumn();
+
+?>
+
+<?php
+$query=$dbh->prepare("SELECT COUNT(*) FROM registered ");
+$query->execute();
+
+$Registered=$query->fetchColumn();
+
+?>
+
+<?php
+$query=$dbh->prepare("SELECT COUNT(*) FROM login WHERE (Date) = (CURDATE())");
+$query->execute();
+
+$Date=$query->fetchColumn();
+
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Cat Life Animals Category Bootstrap Responsive Web Template | Home :: w3layouts</title>
+	<title>GetPet</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -45,85 +80,7 @@
 <body>
 	<div class="w3l-main" id="home">
 	<div class="container">
-			<!-- header -->
-			<div class="header">
-				<div class="logo" style="width:200px;height:200px;">
-					<h1>
-						<a href="http://localhost/GETPET/web/AdminDashboard.php">
-							<img class="logo-img center-block" src="images/Logo/Logo.png" alt="" style="width:250px;height:250px;margin-left: -60px;margin-top: -50px;" />
-						</a>
-					</h1>
-				</div>
-
-				<div class="clearfix"> </div>
-			</div>
-			<!-- //header -->
 		</div>
-		<!-- Slider -->
-		<div class="slider">
-			<div class="callbacks_container">
-				<ul class="rslides" id="slider">
-					<li>
-						<div class="slider-img-w3layouts one">
-							<div class="w3l-overlay">
-								<div class="container">
-									<div class="banner-text-info">
-										<h3>we provide
-											<span>care</span> that your
-											<span>pet</span> deserves!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="slider-img-w3layouts two">
-							<div class="w3l-overlay">
-								<div class="container">
-									<div class="banner-text-info">
-										<h3>you can show your
-											<span>love</span> to your
-											<span>pet</span>!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="slider-img-w3layouts three">
-							<div class="w3l-overlay">
-								<div class="container">
-									<div class="banner-text-info">
-										<h3>we provide
-											<span>care</span> that your
-											<span>pet</span> deserves!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="slider-img-w3layouts four">
-							<div class="w3l-overlay">
-								<div class="container">
-									<div class="banner-text-info">
-										<h3>you can show your
-											<span>love</span> to your
-											<span>pet</span>!</h3>
-										<p>A comprehensive guide to cat care to make your pet feel your love</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<!--//Slider-->
 	</div>
 	<!--//banner-->
 
@@ -141,34 +98,33 @@
 				</div>
 				<div class='collapse navbar-collapse'>
 					<ul>
+						
 						<li>
 							<a href="http://localhost/GETPET/web/AdminDashboard.php">Home</a>
 						</li>
-						<li>
-							<a href="#about" class="scroll">About Us</a>
+						<li style = "width:160px;">
+							<a href="#activity" class="scroll">Activity Log</a>
 						</li>
-						<li>
-							<a href="#services" class="scroll">Services</a>
+						<li style = "width:160px;">
+							<a href="#activity" class="scroll">Request</a>
 						</li>
-						<li>
-							<a href="#blog" class="scroll">Our Blog</a>
+						<li style = "width:140px;">
+							<a href="" class="scroll">Message</a>
 						</li>
-						<li>
-							<a href="#team" class="scroll">Our Team</a>
+						<li style = "width:140px;">
+							<a href="" class="scroll">Donations</a>
 						</li>
-						<li>
-							<a href="#gallery" class="scroll">Gallery</a>
-						</li>
-						<li>
-							<a href="#contact" class="scroll">Contact Us</a>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
-							<div class="dropdown-menu dropdown-menu-right" style="margin-right: 35px;">
-							  <a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 30px;">Profile</t></a>
+						<li class="nav-item" style = "width:90px;"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
+							<div class="dropdown-menu dropdown-menu-right" style="margin-right: 35px;width:200px;">
+							  <img src="images/logo.png" alt="" style="width:80px;height:80px;margin-left: 60px;margin-top: 20px;border-radius: 50%; border:1px solid silver;" />
 							  <div class="dropdown-divider"></div>
-							  <a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 30px;">Settings</t></a>
+							  <a class="dropdown-item" href="#"style="color:black;"><div style="text-align: center"><t>Admin</t></div></a>
 							  <div class="dropdown-divider"></div>
-							  <a class="dropdown-item" href="http://localhost/GETPET/web/Dashboard.php" style="color:black;"><t style="margin-left: 30px;">Log out</t></a>
+							<a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
+							  <div class="dropdown-divider"></div>
+							  <a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
+							  <div class="dropdown-divider"></div>
+							  <a class="dropdown-item" href="http://localhost/GETPET/web/Dashboard.php" style="color:black;"><t style="margin-left: 10px;">Log out</t></a>
 						</div></li>
                     </ul>
 				</div>
@@ -177,451 +133,241 @@
 	</div>
 	<!-- //sticky navigation -->
 
-	<!-- welcome -->
-	<div class="about" id="about">
+	<!-- UserActivityLog -->
+	<div class="services" id="activity">
+	<form class="login100-form validate-form" method="post">
 		<div class="container">
-			<h3 class="agile-title">Welcome</h3>
-			<div class="about-top w3ls-agile">
-				<div class="col-md-6 red">
-					<img class="img-responsive" src="images/ab.jpg" alt="">
-				</div>
-				<div class="col-md-6 come">
-					<div class="about-wel">
-						<h5>A Few Words About Our
-							<span>Cat Life</span>
-						</h5>
-						<p>Masagni dolores eoquie int Basmodi temporant, ut laboreas dolore magnam aliquam kuytase uaeraquis autem vel eum iure
-							reprehend.Unicmquam eius, Basmodi temurer sehsMunim.</p>
-						<ul>
-							<li>
-								<i class="glyphicon glyphicon-ok"></i>Cat health and Care</li>
-							<li>
-								<i class="glyphicon glyphicon-ok"></i>Cat grooming</li>
-							<li>
-								<i class="glyphicon glyphicon-ok"></i>Food for cats</li>
-							<li>
-								<i class="glyphicon glyphicon-ok"></i>Cat behavior</li>
-						</ul>
-					</div>
-					<div class="button-styles">
-						<a href="#" data-toggle="modal" data-target="#myModal2">More Info</a>
-						<a href="#contact" class="button2-w3l scroll">Contact Us</a>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //welcome -->
-
-	<!-- middle slider -->
-	<div class="w3agile-spldishes">
-		<div class="container">
-			<div class="spldishes-grids">
-				<!-- Owl-Carousel -->
-				<div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
-					<a class="item g1">
-						<img class="lazyOwl" src="images/m1.jpg" title="Cat Life" alt="" />
-					</a>
-					<a class="item g1">
-						<img class="lazyOwl" src="images/m2.jpg" title="Cat Life" alt="" />
-					</a>
-					<a class="item g1">
-						<img class="lazyOwl" src="images/m3.jpg" title="Cat Life" alt="" />
-					</a>
-					<a class="item g1">
-						<img class="lazyOwl" src="images/m4.jpg" title="Cat Life" alt="" />
-					</a>
-					<a class="item g1">
-						<img class="lazyOwl" src="images/m5.jpg" title="Cat Life" alt="" />
-					</a>
-					<a class="item g1">
-						<img class="lazyOwl" src="images/m6.jpg" title="Cat Life" alt="" />
-					</a>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //middle slider -->
-
-	<!-- middle section -->
-	<div class="middle-w3l">
-		<div class="container">
-			<h2>Get to know everything about your cat!</h2>
-			<div class="button-styles">
-				<a href="#contact" class="button3-w3l scroll">Contact Us</a>
-			</div>
-		</div>
-	</div>
-	<!-- //middle section -->
-
-	<!-- services -->
-	<div class="services" id="services">
-		<div class="container">
-			<h3 class="agile-title">Services Overview</h3>
+		<h3 class="agile-title">Activity Log</h3>
 			<div class="w3_agile_services_grids">
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid " data-aos="zoom-in">
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/c1.jpg" alt=" " class="img-responsive" />
+							<img src="images/pet_owner_or_rescuer.jpg" alt=" " class="img-responsive" />
 						</div>
 					</div>
+					<br>
+					<legend style="font-size: 20px">Total Pet Owner</legend>
 					<fieldset>
-						<legend>Service 1</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<legend><?php echo $pet_owner; ?></legend>
+						<button type="button" name="PetOwner" style="background-color:#00cdc1;border-radius:2px;color:white;width:100px;height:35px;border:none;"><a href="http://localhost/GETPET/web/PetOwner.php" style="color:white;">View</a></button>
 					</fieldset>
 				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-					<div class="ih-item circle effect1 agile_services_grid">
-						<div class="spinner"></div>
-						<div class="img">
-							<img src="images/c2.jpg" alt=" " class="img-responsive" />
-						</div>
-					</div>
-					<fieldset>
-						<legend>Service 2</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
-					</fieldset>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-					<div class="ih-item circle effect1 agile_services_grid">
-						<div class="spinner"></div>
-						<div class="img">
-							<img src="images/c3.jpg" alt=" " class="img-responsive" />
-						</div>
-					</div>
-					<fieldset>
-						<legend>Service 3</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
-					</fieldset>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="w3_agile_services_grids">
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid " data-aos="zoom-in">
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/c4.jpg" alt=" " class="img-responsive" />
+							<img src="images/adopter.jpg" alt=" " class="img-responsive" />
 						</div>
 					</div>
+					<br>
+					<legend style="font-size: 20px">Total Pet Adopter</legend>
 					<fieldset>
-						<legend>Service 4</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<legend><?php echo $pet_adopter; ?></legend>
+						<button type="button" style="background-color:#00cdc1;border-radius:2px;color:white;width:100px;height:35px;border:none;"><a href="http://localhost/GETPET/web/PetAdopter.php" style="color:white;">View</a></button>
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/c5.jpg" alt=" " class="img-responsive" />
+							<img src="images/b1.jpg" alt=" " class="img-responsive" />
 						</div>
 					</div>
+					<br>
+					<legend style="font-size: 20px">Total Animal Welfare Agency</legend>
 					<fieldset>
-						<legend>Service 5</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<legend><?php echo $animal_welfare_agency;?></legend>
+						<button type="button" style="background-color:#00cdc1;border-radius:2px;color:white;width:100px;height:35px;border:none;"><a href="http://localhost/GETPET/web/AnimalWelfareAgency.php" style="color:white;">View</a></button>
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
+				<br><br>
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/c6.jpg" alt=" " class="img-responsive" />
+							<img src="images/registered.jpg" alt=" " class="img-responsive" />
 						</div>
 					</div>
+					<br>
+					<legend style="font-size: 20px">Total Registered</legend>
 					<fieldset>
-						<legend>Service 6</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+					     <legend><legend><?php echo $Registered;?></legend></legend>
+						 <button type="button" style="background-color:#00cdc1;border-radius:2px;color:white;width:100px;height:35px;border:none;"><a href="http://localhost/GETPET/web/TotalRegistered.php" style="color:white;">View</a></button>
+					</fieldset>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
+				<br><br>
+					<div class="ih-item circle effect1 agile_services_grid">
+						<div class="spinner"></div>
+						<div class="img">
+							<img src="images/login.jpg" alt=" " class="img-responsive" />
+						</div>
+					</div>
+					<br>
+					<legend style="font-size: 20px">Total User Log Today</legend>
+					<fieldset>
+					     <legend><legend><?php echo $Date;?></legend></legend>
+						 <button type="button" style="background-color:#00cdc1;border-radius:2px;color:white;width:100px;height:35px;border:none;"><a href="http://localhost/GETPET/web/UserLogToday.php" style="color:white;">View</a></button>
 					</fieldset>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-		<div class="w3l-img-side">
-			<img src="images/cat11.png" alt="" />
-		</div>
-		<div class="w3l-img-side w3l-img-side2">
-			<img src="images/cat1.png" alt="" />
-		</div>
-	</div>
-	<!-- //services -->
-
-	<!-- blog -->
-	<div class="blog" id="blog">
+		</form>
+	</div><br><br><br><br><br>
+	<!-- //UserActivityLog -->
+   
+	<!-- Pet Owner/Rescuer
+	<div class="PetOwnerOrRescuer" id="PetAdopter"><br><br>
 		<div class="container">
-			<h3 class="agile-title">Our Blog</h3>
-			<div class="col-md-5 col-xs-6 blog-grids">
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Jan</p>
-						<span>18</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>22</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>15</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-5 col-xs-6 blog-grids">
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Jan</p>
-						<span>26</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>06</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-full-wthree">
-					<div class="blog-left-agileits">
-						<p>Feb</p>
-						<span>12</span>
-					</div>
-					<div class="blog-right-agileits-w3layouts">
-						<h4>
-							<a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-						</h4>
-						<p>
-							<a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-						</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="blog-grids mid-blog-agile">
-			<img src="images/cat2.png" class="img-responsive" alt="">
-		</div>
-	</div>
-	<!-- Modal5 -->
-	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<div class="modal-info">
-						<h4>Cat Life</h4>
-						<img src="images/g2.jpg" alt=" " class="img-responsive" />
-						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-						<p class="para-agileits-w3layouts">Duis sit amet nisi quis leo fermentum vestibulum vitae eget augue. Nulla quam nunc, vulputate id urna at, tempor tincidunt
-							metus. Sed feugiat quam nec mauris mattis malesuada.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //Modal5 -->
-	<!-- //blog -->
+		<h3 class="agile-title">Pet Adopter</h3>
+			<div class="w3_agile_services_grids">
+			<form action="" method="post" enctype="multipart/form-data">
+<div class="panel-body p-20">
 
-	<!-- team -->
-	<div class="team" id="team">
-		<div class="container">
-			<h3 class="agile-title">Our Team</h3>
-			<div class="team-agileinfo agileits-w3layouts">
-				<div class="col-md-6 team-grid w3-agileits">
-						<img src="images/team/jennevive.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 90px;" />
-						<h4 style="margin-left: 200px;"> Jennevive Baring</h4>
-						<p style="margin-left: 160px;">Project Manager & Hustler</p>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-6 team-grid w3-agileits">
-						<img src="images/team/Genesis.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 50px;" />
-						<h4 style="margin-left: 170px;">Genesis Tagsip</h4>
-						<p style="margin-left: 200px;">Hacker</p>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-				<div class="col-md-6 team-grid w3-agileits">
-						<img src="images/team/Niel.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 90px;"/>
-						<h4 style="margin-left: 225px;">Niel Tatad</h4>
-						<p style="margin-left: 240px;">Tester</p>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-6 team-grid w3-agileits">
-						<img src="images/team/Novelyn.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 50px;" />
-						<h4 style="margin-left: 170px;">Novelyn Vocales</h4>
-						<p style="margin-left: 200px;">Hipster</p>
-					<div class="clearfix"> </div>
-				</div>
+<table style="text-align:center; padding-right:5px;" class="display table table-striped table-bordered" id="example" cellspacing="0" width="100%">
+<thead>
+<tr>
+</tr> 
+<tr>
+<th style="text-align:center;" width="10%">ID</th>
+<th style="text-align:center;" width="30%">First Name</th>
+<th style="text-align:center;" width="30%">Last Name</th>
+<th style="text-align:center;" width="50%">Contact No.</th>
+<th style="text-align:center;" width="10%">Address</th>
+<th style="text-align:center;" width="10%">Picture</th>
+<th style="text-align:center;" width="10%">Email</th>
+<th style="text-align:center;" width="10%">Role</th>
+</tr>
+</thead>
+
+<tbody>
+<?php
+$sql="SELECT * from pet_adopter";
+$query=$dbh->prepare($sql);
+$query->execute();
+$results=$query->fetchALL(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount()>0)
+{
+  foreach($results as $result)
+  {
+    ?>
+<tr>
+<td><?php echo htmlentities($result->ID);?></td>
+<td><?php echo htmlentities($result->Firstname);?></td>
+<td><?php echo htmlentities($result->Lastname);?></td>
+<td><?php echo htmlentities($result->ContactNo);?></td>
+<td><?php echo htmlentities($result->Address);?></td>
+<td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($result->Picture).'" width="75"; height="80">';?></td>
+<td><?php echo htmlentities($result->Email);?></td>
+<td><?php echo htmlentities($result->Role);?></td>
+<td><img src="images/Edit.png" alt="" style="width:30px;height:30px;margin-top: 1px;border-radius: 50%;" /></td>
+<td><img src="images/Delete.png" alt="" style="width:30px;height:30px;margin-top: 1px;border-radius: 50%;" /></td>
+</tr>
+<?php $cnt=$cnt+1;}} ?>
+</tbody>
+</table>
+</div>
+</form><br><br><br><br>
+<?php
+if(isset($_POST['delete']))
+{
+  foreach ($_POST['ID'] as $ID){
+    $query="Delete from pet_owner where ID=:ID";
+    $query1 = $dbh->prepare($query);
+    $query1->bindValue('studID',$studID);
+    $query1->execute();
+
+	echo '<script>alert("Deleted Successfully!!!")</script>';
+    echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/AdminDashboard.php'</script>";
+
+    }
+}
+if(isset($_POST['insert']))
+{
+
+    echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/Dashboard/AdminHomePage.php'</script>";
+
+}
+
+?>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	<!-- //team -->
+	-->
 
-	<!-- Gallery -->
-	<div id="gallery" class="gallery">
-		<div class="container">
-			<h3 class="agile-title">Gallery</h3>
-		</div>
-		<div class="agileinfo-gallery-row">
-			<div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-				<a href="images/m1.jpg" class="imghvr-hinge-right figure">
-					<img src="images/m1.jpg" alt="" title="Cat Life Image" />
-				</a>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-				<a href="images/g2.jpg" class="imghvr-hinge-right figure">
-					<img src="images/g2.jpg" alt="" title="Cat Life Image" />
-				</a>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-				<a href="images/g3.jpg" class="imghvr-hinge-right figure">
-					<img src="images/g3.jpg" alt="" title="Cat Life Image" />
-				</a>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-				<a href="images/m4.jpg" class="imghvr-hinge-right figure">
-					<img src="images/m4.jpg" alt="" title="Cat Life Image" />
-				</a>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-				<a href="images/m5.jpg" class="imghvr-hinge-right figure">
-					<img src="images/m5.jpg" alt="" title="Cat Life Image" />
-				</a>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-				<a href="images/m6.jpg" class="imghvr-hinge-right figure">
-					<img src="images/m6.jpg" alt="" title="Cat Life Image" />
-				</a>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-				<a href="images/m3.jpg" class="imghvr-hinge-right figure">
-					<img src="images/m3.jpg" alt="" title="Cat Life Image" />
-				</a>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-				<a href="images/m2.jpg" class="imghvr-hinge-right figure">
-					<img src="images/m2.jpg" alt="" title="Cat Life Image" />
-				</a>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
-	<!-- //Gallery -->
-
-	<!-- contact -->
-	<div class="contact" id="contact">
-		<div class="container">
-			<h3 class="agile-title">Contact Us</h3>
-			<div class="col-md-9 col-sm-9 contact-right">
-				<form action="#" method="post">
-					<input type="text" name="name" placeholder="Your name" required="">
-					<input type="email" name="email" placeholder="Your email" required="">
-					<input type="text" name="subject" placeholder="Your subject" required="">
-					<input type="text" name="phone number" placeholder="Phone number" required="">
-					<textarea name="message" placeholder="Your message" required=""></textarea>
-					<input type="submit" value="Send">
-				</form>
-			</div>
-			<div class="col-md-3 col-sm-3 contact-left">
-				<div class="address">
-					<h4>
-						<i class="fa fa-map-marker" aria-hidden="true"></i>Location</h4>
-					<p>345 Setwant natrer,</p>
-					<p>Metropolitan, Italy.</p>
-				</div>
-				<div class="phone">
-					<h4>
-						<i class="fa fa-phone" aria-hidden="true"></i>PHONE</h4>
-					<p>+1(401) 1234 567.</p>
-					<p>+1(804) 4261 150.</p>
-				</div>
-				<div class="email">
-					<h4>
-						<i class="fa fa-envelope-o" aria-hidden="true"></i>E-MAIL</h4>
-					<p>
-						<a href="mailto:info@example.com">Example1@gmail.com</a>
-					</p>
-					<p>
-						<a href="mailto:info@example.com">Example2@gmail.com</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- map -->
-	<div class="map-w3ls">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22702.22744502486!2d11.113366067229226!3d44.662878362361056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fc3eca9065c15%3A0x12ec8a03aadae866!2s40019+Sant&#39;Agata+Bolognese+BO%2C+Italy!5e0!3m2!1sen!2sin!4v1451281303075"
-		    allowfullscreen></iframe>
-	</div>
-	<!-- //map -->
-	<!-- //contact -->
+	<!-- //Pet Owner/Rescuer -->
+	<div class="modal fade"  data-keyboard="false" data-backdrop="static" id="PetOwner" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content"> 
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size:30px;margin-top:-20px;">&times;</button>
+                    <div class="modal-info">
+                    <form class="login100-form validate-form" method="post">
+                    <img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-left:140px;margin-top:-60px;" alt=" " class="img-responsive"/>
+                    <h2 style="text-align:center;margin-top:-40px;">Pet Owner/Rescuer Registration</h2>
+                    <br>
+                    <div style="text-align: center" class="wrap-input100 validate-input">
+                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Firstname" placeholder="Firstname">
+                    </div><br>
+                    <div style="text-align: center" class="wrap-input100 validate-input">
+                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Lastname" placeholder="Lastname">
+                        <span class="focus-input100"></span>
+                    </div><br>
+                    <div  style="text-align: center" class="wrap-input100 validate-input">
+                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;font-family:Arial;" type="text" name="ContactNo" onkeypress="isInputNumber(event)" maxlength="11" placeholder="Contact No.">
+                        <script>
+            
+                        function isInputNumber(evt){
+                
+                        var ch = String.fromCharCode(evt.which);
+                
+                        if(!(/[0-9]/.test(ch))){
+                        evt.preventDefault();
+                       }
+                    }
+                    </script>
+                    </div><br>
+                    <div style="text-align: center" class="wrap-input100 validate-input">
+                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Address" required="required" placeholder="Address">
+                    </div><br>
+                    <div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Email" required="required" placeholder="Email">
+                    </div><br>
+                    <div  style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="password" name="Password" required="required" placeholder="Password">
+                    </div><br>
+                    <div style="text-align: center">
+                        <button  class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="PetOwnerOrRescuer">
+                            <a style="color:White"> Register </a>
+                        </button>
+                    </div><br>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Pet Owner/Rescuer -->
 
 	<!-- footer -->
 	<section class="footer-w3">
 		<div class="container">
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-agile1" data-aos="zoom-in">
-				<h3>Some More</h3>
-				<p class="footer-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed ligula ac metus finibus hendrerit sed at libero. Praesent
-					blandit dignissim elit, vel feugiat nulla porta a. Praesent tellus eros, consectetur quis tortor at, tempor varius quam.
+				<h3>ADOPTING MEANS YOU SAVE A LIFE!</h3>
+				<p class="footer-p1">Too often, shelters euthanize animals due to room constraints, but if more people adopted pets instead of buying them, the number of pets euthanized would lower dramatically.
+						When you adopt, not only do you save your loving new companion, but you make space for other animals who desperately need it, creating a domino effect of goodness.
 				</p>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-mid-w3" data-aos="zoom-in">
 				<h3>Instagram Posts</h3>
 				<div class="agileinfo_footer_grid1">
 					<a href="#">
-						<img src="images/f1.jpg" alt=" " class="img-responsive">
+						<img src="images/dogs1.jpg" alt=" " class="img-responsive">
 					</a>
 				</div>
 				<div class="agileinfo_footer_grid1">
@@ -631,7 +377,7 @@
 				</div>
 				<div class="agileinfo_footer_grid1">
 					<a href="#">
-						<img src="images/f3.jpg" alt=" " class="img-responsive">
+						<img src="images/dogs3.jpg" alt=" " class="img-responsive">
 					</a>
 				</div>
 				<div class="agileinfo_footer_grid1">
@@ -641,7 +387,7 @@
 				</div>
 				<div class="agileinfo_footer_grid1">
 					<a href="#">
-						<img src="images/f5.jpg" alt=" " class="img-responsive">
+						<img src="images/dogs5.jpg" alt=" " class="img-responsive">
 					</a>
 				</div>
 				<div class="agileinfo_footer_grid1">
@@ -652,23 +398,23 @@
 				<div class="clearfix"> </div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-agile1" data-aos="zoom-in">
-				<h3>Latest Tweets</h3>
+				<h3>Follow us also in Twitter</h3>
 				<ul class="tweet-agile">
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:support@company.com">@example</a> sit amet consectetur adipiscing.
-							<a href="#">http://ax.by/zzzz</a>
+							<a href="mailto:support@company.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
+							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
-						<p class="tweet-p2">Posted 3 days ago.</p>
+						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
 					</li>
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:support@company.com">@example</a> sit amet consectetur adipiscing.
-							<a href="#">http://cx.dy/zzzz</a>
+							<a href="mailto:support@company.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
+							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
-						<p class="tweet-p2">Posted 3 days ago.</p>
+						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
 					</li>
 				</ul>
 			</div>
@@ -678,8 +424,8 @@
 	<!-- copyright -->
 	<div class="w3layouts_copy_right">
 		<div class="container">
-			<p>© 2018 Cat Life. All rights reserved | Design by
-				<a href="http://w3layouts.com">W3layouts.</a>
+			<p>© 2021 GetPet. All rights reserved | Design by
+				<a href="">Team K.W .</a>
 			</p>
 		</div>
 	</div>

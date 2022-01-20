@@ -3,12 +3,12 @@ session_start();
 include('C:\xampp\htdocs\GETPET\includes\config.php');
 if(isset($_POST['login']))
 {
-	$Email=$_POST['Email'];
+	$Username=$_POST['Username'];
     $Password=$_POST['Password'];
 
-    $sql = "SELECT * FROM admin WHERE Email = :Email AND Password =:Password";
+    $sql = "SELECT * FROM admin WHERE Username = :Username AND Password =:Password";
     $query = $dbh->prepare($sql);
-    $query->bindParam(':Email', $Email,PDO::PARAM_STR);
+    $query->bindParam(':Username', $Username,PDO::PARAM_STR);
     $query->bindParam(':Password', $Password,PDO::PARAM_STR);
     $query->execute();
     $results=$query->fetch(PDO::FETCH_ASSOC);
@@ -18,17 +18,17 @@ if(isset($_POST['login']))
     {
 
         session_regenerate_id();
-		$_SESSION['ID'] = $results['ID'];
-
+		    $_SESSION['ID'] = $results['ID'];
+       
         echo '<script>alert("Login Successfully!!!")</script>';
         echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/AdminDashboard.php'</script>";
 
 
     }
 
-    $sql1 = "SELECT * FROM pet_owner_rescuer WHERE Email = :Email AND Password =:Password";
+    $sql1 = "SELECT * FROM pet_owner WHERE Username = :Username AND Password =:Password";
     $query1 = $dbh->prepare($sql1);
-    $query1->bindParam(':Email', $Email,PDO::PARAM_STR);
+    $query1->bindParam(':Username', $Username,PDO::PARAM_STR);
     $query1->bindParam(':Password', $Password,PDO::PARAM_STR);
     $query1->execute();
     $results1=$query1->fetch(PDO::FETCH_ASSOC);
@@ -38,18 +38,94 @@ if(isset($_POST['login']))
     {
 
         session_regenerate_id();
-		$_SESSION['ID'] = $results1['ID'];
-		$_SESSION['Firstname'] = $results1['Firstname'];
-        $_SESSION['Laststname'] = $results1['Laststname'];
+		    $_SESSION['ID'] = $results1['ID'];
+        $_SESSION['Firstname'] = $results1['Firstname'];
+        $_SESSION['Lastname'] = $results1['Lastname'];
+
+        $ID=$_SESSION['ID'];
+
+        $Date=($_POST['Date']);
+
+        $sql="update login set Date=:Date where ID=$ID";
+        $query=$dbh->prepare($sql); 
+        $query->bindParam(':Date',$Date,PDO::PARAM_STR);
+        $query->execute();
 
         echo '<script>alert("Login Successfully!!!")</script>';
-        echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/PetOwnerOrRescuerDashboard.php'</script>";
-
+        echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/PetOwnerDashboard.php'</script>";
+        echo $_SESSION['ID'];
+        echo $_SESSION['Firstname'];
+        echo $_SESSION['Lastname'];
 
     }
 
+    $sql2 = "SELECT * FROM pet_adopter WHERE Username = :Username AND Password =:Password";
+    $query2 = $dbh->prepare($sql2);
+    $query2->bindParam(':Username', $Username,PDO::PARAM_STR);
+    $query2->bindParam(':Password', $Password,PDO::PARAM_STR);
+    $query2->execute();
+    $results2=$query2->fetch(PDO::FETCH_ASSOC);
+    
 
-	else 
+    if($query2->rowCount()>0)
+    {
+
+        session_regenerate_id();
+		    $_SESSION['ID'] = $results2['ID'];
+        $_SESSION['Firstname'] = $results2['Firstname'];
+        $_SESSION['Lastname'] = $results2['Lastname'];
+
+        $ID=$_SESSION['ID'];
+
+        $Date=($_POST['Date']);
+
+        $sql="update login set Date=:Date where ID=$ID";
+        $query=$dbh->prepare($sql); 
+        $query->bindParam(':Date',$Date,PDO::PARAM_STR);
+        $query->execute();
+
+        echo '<script>alert("Login Successfully!!!")</script>';
+        echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/PetAdopterDashboard.php'</script>";
+        echo $_SESSION['ID'];
+        echo $_SESSION['Firstname'];
+        echo $_SESSION['Lastname'];
+
+    }
+
+    $sql3 = "SELECT * FROM animal_welfare_agency WHERE Username = :Username AND Password =:Password";
+    $query3 = $dbh->prepare($sql3);
+    $query3->bindParam(':Username', $Username,PDO::PARAM_STR);
+    $query3->bindParam(':Password', $Password,PDO::PARAM_STR);
+    $query3->execute();
+    $results3=$query3->fetch(PDO::FETCH_ASSOC);
+    
+
+    if($query3->rowCount()>0)
+    {
+
+        session_regenerate_id();
+		    $_SESSION['ID'] = $results3['ID'];
+        $_SESSION['OrganizationName'] = $results3['OrganizationName'];
+        $_SESSION['OrganizationManager'] = $results3['OrganizationManager'];
+
+        $ID=$_SESSION['ID'];
+
+        $Date=($_POST['Date']);
+
+        $sql="update login set Date=:Date where ID=$ID";
+        $query=$dbh->prepare($sql); 
+        $query->bindParam(':Date',$Date,PDO::PARAM_STR);
+        $query->execute();
+
+        echo '<script>alert("Login Successfully!!!")</script>';
+        echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/AnimalWelfareAgencyDashboard.php'</script>";
+        echo $_SESSION['ID'];
+        echo $_SESSION['OrganizationName'];
+        echo $_SESSION['OrganizationManager'];
+
+    }
+    
+    else 
     echo '<script>alert("Invalid Account!!!")</script>';
 	
 
@@ -102,12 +178,17 @@ if(isset($_POST['login']))
                 <div style="text-align:left;margin-top:-50px;margin-bottom:20px;margin-left:-40px;cursor: pointer;"><a onclick="history.back()" class="signup-image-link" ><u><-Back</u></a></div>
 					      <p style="text-align:center;"><img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-top:-80px;" alt=" " class="img-responsive"/></p>
 					      <h2 style="text-align:center;margin-top:-60px;margin-bottom:30px;">Sign In to <strong>GetPet</strong></h2>
-					      <div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						    <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Email"  required="required" placeholder="Email">
-					      </div>
-					      <br>
+					      <div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid username is required: ex@abc.xyz">
+						    <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Username"  required="required" placeholder="Username">
+					      </div><br>
 					      <div  style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
 						    <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="password" name="Password" placeholder="Password" required="required" autocomplete="off">
+					      </div>
+                <?php
+                date_default_timezone_set("Asia/Manila");
+                ?>
+                <div hidden style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
+						    <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" name="Date" required="required" value="<?php echo date('Y-m-d'); ?>" autocomplete="off">
 					      </div><br>
 					      <div style="text-align: center" class="flex-sb-m w-full p-t-3 p-b-32">
 						    <div class="contact100-form-checkbox">
