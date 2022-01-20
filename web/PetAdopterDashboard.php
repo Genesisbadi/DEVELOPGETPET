@@ -300,11 +300,8 @@ if($query->rowCount()>0)
 								<i class="glyphicon glyphicon-ok"></i>Animal help Services</li>
 							<li>
 								<i class="glyphicon glyphicon-ok"></i>Post Pets for Adoption</li>
-<<<<<<< HEAD:web/PetAdopterDashboard.php
 							<li>
 								<i class="glyphicon glyphicon-ok"></i>Market Place</li>
-=======
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b:web/PetOwnerOrRescuerDashboard.php
 						</ul>
 					</div>
 					<div class="button-styles">
@@ -501,7 +498,6 @@ if($query->rowCount()>0)
 					</div>
 				</div>
 			</div>
-<<<<<<< HEAD:web/PetAdopterDashboard.php
 		</div>
 	</div>
 	<!-- //ModalProfile -->
@@ -571,11 +567,9 @@ if($query->rowCount()>0)
 		</div>
 	</div>
 	<!-- //ModalSettings -->
-=======
 		</div>
 	</div>
 	<!-- //ModalProfile -->
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b:web/PetOwnerOrRescuerDashboard.php
 
 	<!-- ModalPM -->
 	<div class="modal fade" id="PM" tabindex="-1" role="dialog">

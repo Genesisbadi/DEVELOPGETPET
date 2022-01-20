@@ -261,10 +261,7 @@ if($query->rowCount()>0)
 							  <img src="images/default_profile.png" alt="" style="width:80px;height:80px;margin-left: 60px;margin-top: 20px;border-radius: 50%;" />
 							  <div class="dropdown-divider"></div>
 							  <a class="dropdown-item" href="" data-toggle="modal" data-target="#Profile" style="color:black;"><div style="text-align: center"><t><?php echo ($result->OrganizationName);?></div></t></a>
-<<<<<<< HEAD
 							  <div style="text-align: center; margin-top:-30px;"><t ><?php echo ($result->Role);?></t></div>
-=======
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 							  <div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="" data-toggle="modal" data-target="#Profile" style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
 							  <div class="dropdown-divider"></div>
@@ -688,11 +685,8 @@ if($query->rowCount()>0)
 	</div>
 	 -->
 
-<<<<<<< HEAD
 	<!-- contact -->
-=======
 	<!-- contact
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 	<div class="contact" id="contact">
 		<div class="container">
 			<h3 class="agile-title">Contact Us</h3>
@@ -723,27 +717,21 @@ if($query->rowCount()>0)
 					<h4>
 						<i class="fa fa-envelope-o" aria-hidden="true"></i>G-MAIL</h4>
 					<p>
-<<<<<<< HEAD
 						<a href="mailto:info@example.com">GetPet@gmail.com</a>
 					</p>
 					<p>
 						<a href="mailto:info@example.com">WeAreGetPet@gmail.com</a>
-=======
 						<a href="mailto:king30cinco@gmail.com">GetPet@gmail.com</a>
 					</p>
 					<p>
 						<a href="mailto:king30cinco@gmail.com">WeAreGetPet@gmail.com</a>
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
 	-->
 	
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 	<!-- 
 	<div class="map-w3ls">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22702.22744502486!2d11.113366067229226!3d44.662878362361056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fc3eca9065c15%3A0x12ec8a03aadae866!2s40019+Sant&#39;Agata+Bolognese+BO%2C+Italy!5e0!3m2!1sen!2sin!4v1451281303075"
@@ -801,11 +789,8 @@ if($query->rowCount()>0)
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-<<<<<<< HEAD
 							<a href="mailto:support@company.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
-=======
 							<a href="mailto:king30cinco@gmail.com.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
 						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
@@ -813,11 +798,8 @@ if($query->rowCount()>0)
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-<<<<<<< HEAD
 							<a href="mailto:support@company.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
-=======
 							<a href="mailto:king30cinco@gmail.com.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
 						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->

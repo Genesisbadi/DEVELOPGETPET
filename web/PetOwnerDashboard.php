@@ -18,7 +18,6 @@ if($query->rowCount()>0)
 <?php
 ?>
 <?php }} ?>
-<<<<<<< HEAD
 <?php
 if(isset($_POST['update']))
 {
@@ -103,8 +102,6 @@ if($query->rowCount()>0)
 }
 }
 ?>
-=======
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -269,10 +266,6 @@ if($query->rowCount()>0)
 							  <div class="dropdown-divider"></div>
 							  <a class="dropdown-item" href="" data-toggle="modal" data-target="#Settings"style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
 							  <div class="dropdown-divider"></div>
-							  <a href="" data-toggle="modal" data-target="#Profile" style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
-							  <div class="dropdown-divider"></div>
-							  <a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
-							  <div class="dropdown-divider"></div>
 							  <a class="dropdown-item" href="http://localhost/GETPET/web/Dashboard.php" style="color:black;"><t style="margin-left: 10px;">Log out</t></a>
 						</div></li>
                     </ul>
@@ -308,11 +301,8 @@ if($query->rowCount()>0)
 								<i class="glyphicon glyphicon-ok"></i>Animal help Services</li>
 							<li>
 								<i class="glyphicon glyphicon-ok"></i>Post Pets for Adoption</li>
-<<<<<<< HEAD
 							<li>
 								<i class="glyphicon glyphicon-ok"></i>MarketPlace</li>
-=======
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 						</ul>
 					</div>
 					<div class="button-styles">
@@ -390,11 +380,8 @@ if($query->rowCount()>0)
 					</div>
 					<fieldset>
 						<legend>Service 1</legend>
-<<<<<<< HEAD
 						<b>Pet Health Monitoring</b>
-=======
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
@@ -406,11 +393,8 @@ if($query->rowCount()>0)
 					</div>
 					<fieldset>
 						<legend>Service 2</legend>
-<<<<<<< HEAD
 						<b>Animal Care Tips</b>
-=======
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
@@ -422,11 +406,8 @@ if($query->rowCount()>0)
 					</div>
 					<fieldset>
 						<legend>Service 3</legend>
-<<<<<<< HEAD
 						<b>Donation and Volunteers</b>
-=======
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 					</fieldset>
 				</div>
 				<div class="clearfix"> </div>
@@ -441,11 +422,8 @@ if($query->rowCount()>0)
 					</div>
 					<fieldset>
 						<legend>Service 4</legend>
-<<<<<<< HEAD
 						<b>Animal help Services</b>
-=======
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
@@ -457,11 +435,8 @@ if($query->rowCount()>0)
 					</div>
 					<fieldset>
 						<legend>Service 5</legend>
-<<<<<<< HEAD
 						<b>Post Pets for Adoption</b>
-=======
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
@@ -473,11 +448,8 @@ if($query->rowCount()>0)
 					</div>
 					<fieldset>
 						<legend>Service 6</legend>
-<<<<<<< HEAD
 						<b>MarketPlace</b>
-=======
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 					</fieldset>
 				</div>
 				<div class="clearfix"> </div>
@@ -537,7 +509,6 @@ if($query->rowCount()>0)
 	</div>
 	<!-- //ModalProfile -->
 
-<<<<<<< HEAD
 	<!-- ModalSettings -->
 	<div class="modal fade" id="Settings" tabindex="-1" role="dialog">
 		<div class="modal-dialog">
@@ -604,8 +575,6 @@ if($query->rowCount()>0)
 	</div>
 	<!-- //ModalSettings -->
 
-=======
->>>>>>> 3df479d1c9e0bdce986bb2a3a614bd6ba322846b
 	<!-- ModalPM -->
 	<div class="modal fade" id="PM" tabindex="-1" role="dialog">
 		<div class="modal-dialog">
