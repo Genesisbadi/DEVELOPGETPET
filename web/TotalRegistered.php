@@ -103,7 +103,7 @@ $Date=$query->fetchColumn();
 							<a href="http://localhost/GETPET/web/AdminDashboard.php">Home</a>
 						</li>
 						<li style = "width:160px;">
-							<a href="#activity" class="scroll">Activity Log</a>
+							<a href="http://localhost/GETPET/web/AdminDashboard.php">Activity Log</a>
 						</li>
 						<li style = "width:160px;">
 							<a href="#activity" class="scroll">Request</a>
@@ -130,110 +130,26 @@ $Date=$query->fetchColumn();
 	</div>
 	<!-- //sticky navigation -->
 
-	<!-- Total -->
-	<div class="services" id="activity">
-	<form class="login100-form validate-form" method="post">
+	<!-- Pet Owner -->
+	<div class="PetOwnerOrRescuer" id="PetOwner"><br><br>
 		<div class="container">
-		<h3 class="agile-title">Activity Log</h3>
+		<h3 class="agile-title">Total Registered</h3>
 			<div class="w3_agile_services_grids">
-				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid " data-aos="zoom-in">
-					<div class="ih-item circle effect1 agile_services_grid">
-						<div class="spinner"></div>
-						<div class="img">
-							<img src="images/pet_owner_or_rescuer.jpg" alt=" " class="img-responsive" />
-						</div>
-					</div>
-					<br>
-					<legend style="font-size: 20px">Total Pet Owner</legend>
-					<fieldset>
-						<legend><?php echo $pet_owner; ?></legend>
-						<button type="button" name="PetOwner" style="background-color:#00cdc1;border-radius:2px;color:white;width:100px;height:35px;border:none;"><a href="http://localhost/GETPET/web/PetOwner.php" style="color:white;">View</a></button>
-					</fieldset>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid " data-aos="zoom-in">
-					<div class="ih-item circle effect1 agile_services_grid">
-						<div class="spinner"></div>
-						<div class="img">
-							<img src="images/adopter.jpg" alt=" " class="img-responsive" />
-						</div>
-					</div>
-					<br>
-					<legend style="font-size: 20px">Total Pet Adopter</legend>
-					<fieldset>
-						<legend><?php echo $pet_adopter; ?></legend>
-						<button type="button" style="background-color:#00cdc1;border-radius:2px;color:white;width:100px;height:35px;border:none;"><a href="http://localhost/GETPET/web/PetAdopter.php" style="color:white;">View</a></button>
-					</fieldset>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-					<div class="ih-item circle effect1 agile_services_grid">
-						<div class="spinner"></div>
-						<div class="img">
-							<img src="images/b1.jpg" alt=" " class="img-responsive" />
-						</div>
-					</div>
-					<br>
-					<legend style="font-size: 20px">Total Animal Welfare Agency</legend>
-					<fieldset>
-						<legend><?php echo $animal_welfare_agency;?></legend>
-						<button type="button" style="background-color:#00cdc1;border-radius:2px;color:white;width:100px;height:35px;border:none;"><a href="http://localhost/GETPET/web/AnimalWelfareAgency.php" style="color:white;">View</a></button>
-					</fieldset>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-				<br><br>
-					<div class="ih-item circle effect1 agile_services_grid">
-						<div class="spinner"></div>
-						<div class="img">
-							<img src="images/registered.jpg" alt=" " class="img-responsive" />
-						</div>
-					</div>
-					<br>
-					<legend style="font-size: 20px">Total Registered</legend>
-					<fieldset>
-					     <legend><legend><?php echo $Registered;?></legend></legend>
-						 <button type="button" style="background-color:#00cdc1;border-radius:2px;color:white;width:100px;height:35px;border:none;"><a href="http://localhost/GETPET/web/TotalRegistered.php" style="color:white;">View</a></button>
-					</fieldset>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-				<br><br>
-					<div class="ih-item circle effect1 agile_services_grid">
-						<div class="spinner"></div>
-						<div class="img">
-							<img src="images/login.jpg" alt=" " class="img-responsive" />
-						</div>
-					</div>
-					<br>
-					<legend style="font-size: 20px">Total User Log Today</legend>
-					<fieldset>
-					     <legend><legend><?php echo $Date;?></legend></legend>
-						 <button type="button" style="background-color:#00cdc1;border-radius:2px;color:white;width:100px;height:35px;border:none;"><a href="http://localhost/GETPET/web/UserLogToday.php" style="color:white;">View</a></button>
-					</fieldset>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-		</form>
-	</div><br><br><br><br><br>
-	<!-- //Total -->
-   
-	<!-- Pet Owner/Rescuer
-	<div class="PetOwnerOrRescuer" id="PetAdopter"><br><br>
-		<div class="container">
-		<h3 class="agile-title">Pet Adopter</h3>
-			<div class="w3_agile_services_grids">
-			<form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post">
 <div class="panel-body p-20">
 
-<table style="text-align:center; padding-right:5px;" class="display table table-striped table-bordered" id="example" cellspacing="0" width="100%">
+<table style="text-align:center; padding-right:5px; margin-left:0px;" class="display table table-striped table-bordered" id="example" cellspacing="0" width="100%">
 <thead>
 <tr>
 </tr> 
 <tr>
+<th style="text-align:center; padding-right:5px;">Select</br>
 <th style="text-align:center;" width="10%">ID</th>
-<th style="text-align:center;" width="30%">First Name</th>
-<th style="text-align:center;" width="30%">Last Name</th>
+<th style="text-align:center;" width="30%">Organization Name/First Name</th>
+<th style="text-align:center;" width="30%">Organization Manager/Last Name</th>
 <th style="text-align:center;" width="50%">Contact No.</th>
 <th style="text-align:center;" width="10%">Address</th>
-<th style="text-align:center;" width="10%">Picture</th>
+<th style="text-align:center;" width="10%">Logo/Picture</th>
 <th style="text-align:center;" width="10%">Email</th>
 <th style="text-align:center;" width="10%">Role</th>
 </tr>
@@ -241,7 +157,7 @@ $Date=$query->fetchColumn();
 
 <tbody>
 <?php
-$sql="SELECT * from pet_adopter";
+$sql="SELECT * from registered";
 $query=$dbh->prepare($sql);
 $query->execute();
 $results=$query->fetchALL(PDO::FETCH_OBJ);
@@ -252,104 +168,50 @@ if($query->rowCount()>0)
   {
     ?>
 <tr>
+<td style="text-align:center;"><input type="checkbox" class="checkItem" value="<?php echo htmlentities($result->ID)?>" name="ID[]"></td>
 <td><?php echo htmlentities($result->ID);?></td>
-<td><?php echo htmlentities($result->Firstname);?></td>
-<td><?php echo htmlentities($result->Lastname);?></td>
+<td><?php echo htmlentities($result->OrganizationNameOrFirstname);?></td>
+<td><?php echo htmlentities($result->OrganizationManagerOrLastname);?></td>
 <td><?php echo htmlentities($result->ContactNo);?></td>
 <td><?php echo htmlentities($result->Address);?></td>
-<td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($result->Picture).'" width="75"; height="80">';?></td>
+<td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($result->Image).'" width="75"; height="80">';?></td>
 <td><?php echo htmlentities($result->Email);?></td>
-<td><?php echo htmlentities($result->Role);?></td>
-<td><img src="images/Edit.png" alt="" style="width:30px;height:30px;margin-top: 1px;border-radius: 50%;" /></td>
-<td><img src="images/Delete.png" alt="" style="width:30px;height:30px;margin-top: 1px;border-radius: 50%;" /></td>
+<td><?php echo htmlentities($result->Role);?></td>                                  
 </tr>
 <?php $cnt=$cnt+1;}} ?>
 </tbody>
 </table>
 </div>
-</form><br><br><br><br>
+</form>
 <?php
 if(isset($_POST['delete']))
 {
   foreach ($_POST['ID'] as $ID){
-    $query="Delete from pet_owner where ID=:ID";
+    $query="Delete from animal_welfare_agency where ID=:ID";
     $query1 = $dbh->prepare($query);
-    $query1->bindValue('studID',$studID);
+    $query1->bindValue('ID',$ID);
     $query1->execute();
 
-	echo '<script>alert("Deleted Successfully!!!")</script>';
-    echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/AdminDashboard.php'</script>";
+    $query2="Delete from registered where ID=:ID";
+    $query3 = $dbh->prepare($query2);
+    $query3->bindValue('ID',$ID);
+    $query3->execute();
 
+    $query4="Delete from login where ID=:ID";
+    $query5 = $dbh->prepare($query4);
+    $query5->bindValue('ID',$ID);
+    $query5->execute();
+
+    echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/PetOwner.php'</script>";
     }
-}
-if(isset($_POST['insert']))
-{
-
-    echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/Dashboard/AdminHomePage.php'</script>";
-
 }
 
 ?>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-	</div>
-	-->
-
-	<!-- //Pet Owner/Rescuer -->
-	<div class="modal fade"  data-keyboard="false" data-backdrop="static" id="PetOwner" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content"> 
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size:30px;margin-top:-20px;">&times;</button>
-                    <div class="modal-info">
-                    <form class="login100-form validate-form" method="post">
-                    <img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-left:140px;margin-top:-60px;" alt=" " class="img-responsive"/>
-                    <h2 style="text-align:center;margin-top:-40px;">Pet Owner/Rescuer Registration</h2>
-                    <br>
-                    <div style="text-align: center" class="wrap-input100 validate-input">
-                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Firstname" placeholder="Firstname">
-                    </div><br>
-                    <div style="text-align: center" class="wrap-input100 validate-input">
-                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Lastname" placeholder="Lastname">
-                        <span class="focus-input100"></span>
-                    </div><br>
-                    <div  style="text-align: center" class="wrap-input100 validate-input">
-                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;font-family:Arial;" type="text" name="ContactNo" onkeypress="isInputNumber(event)" maxlength="11" placeholder="Contact No.">
-                        <script>
-            
-                        function isInputNumber(evt){
-                
-                        var ch = String.fromCharCode(evt.which);
-                
-                        if(!(/[0-9]/.test(ch))){
-                        evt.preventDefault();
-                       }
-                    }
-                    </script>
-                    </div><br>
-                    <div style="text-align: center" class="wrap-input100 validate-input">
-                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Address" required="required" placeholder="Address">
-                    </div><br>
-                    <div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Email" required="required" placeholder="Email">
-                    </div><br>
-                    <div  style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="password" name="Password" required="required" placeholder="Password">
-                    </div><br>
-                    <div style="text-align: center">
-                        <button  class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="PetOwnerOrRescuer">
-                            <a style="color:White"> Register </a>
-                        </button>
-                    </div><br>
-                    </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //Pet Owner/Rescuer -->
+	</div><br><br>
+	<!-- //Pet Owner -->
 
 	<!-- footer -->
 	<section class="footer-w3">
@@ -400,7 +262,7 @@ if(isset($_POST['insert']))
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:king30cinco@gmail.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
+							<a href="mailto:support@company.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
 							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
 						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
@@ -408,7 +270,7 @@ if(isset($_POST['insert']))
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:king30cinco@gmail.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
+							<a href="mailto:support@company.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
 							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
 						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->

@@ -1,22 +1,19 @@
-]<?php 
+<?php
 session_start();
 include('C:\xampp\htdocs\GETPET\includes\config.php');
 if(isset($_POST['insert']))
 {
-
-$OrganizationNameOrFirstname=($_POST['OrganizationName']);
-$OrganizationManagerOrLastname=($_POST['OrganizationManager']);
-$Logo=addslashes(file_get_contents($_FILES["Logo"]["tmp_name"])) ;
+$OrganizationNameOrFirstname=($_POST['Firstname']);
+$OrganizationManagerOrLastname=($_POST['Lastname']);
 $AccountContactNo=($_POST['ContactNo']);
 $AccountAddress=($_POST['Address']);
 $AccountEmail=($_POST['Email']);
 $AccountUsername=($_POST['Username']);
 $AccountPassword=($_POST['Password']);
-$sql="INSERT INTO registered(OrganizationNameOrFirstname,OrganizationManagerOrLastname,Image,ContactNo,Address,Email,Username,Password,Role,Date)VALUES(:Firstname,:Lastname,:Logo,:ContactNo,:Address,:Email,:Username,:Password,'Animal Welfare Agency',Now())";
+$sql="INSERT INTO registered(OrganizationNameOrFirstname,OrganizationManagerOrLastname,ContactNo,Address,Email,Username,Password,Role,Date)VALUES(:Firstname,:Lastname,:ContactNo,:Address,:Email,:Username,:Password,'Pet Adopter',Now())";
 $query=$dbh->prepare($sql); 
 $query->bindParam(':Firstname',$OrganizationNameOrFirstname,PDO::PARAM_STR);
 $query->bindParam(':Lastname',$OrganizationManagerOrLastname,PDO::PARAM_STR);
-$query->bindParam(':Logo',$Logo,PDO::PARAM_STR);
 $query->bindParam(':ContactNo',$AccountContactNo,PDO::PARAM_STR);
 $query->bindParam(':Address',$AccountAddress,PDO::PARAM_STR);
 $query->bindParam(':Email',$AccountEmail,PDO::PARAM_STR);
@@ -30,20 +27,17 @@ $query2->execute();
 
 $ID=$query2->fetchColumn();
 
-
-$OrganizationName=($_POST['OrganizationName']);
-$OrganizationManager=($_POST['OrganizationManager']);
-$Logo=addslashes(file_get_contents($_FILES["Logo"]["tmp_name"])) ;
+$Firstname=($_POST['Firstname']);
+$Lastname=($_POST['Lastname']);
 $ContactNo=($_POST['ContactNo']);
 $Address=($_POST['Address']);
 $Email=($_POST['Email']);
 $Username=($_POST['Username']);
 $Password=($_POST['Password']);
-$sql1="INSERT INTO animal_welfare_agency(ID,OrganizationName,OrganizationManager,Logo,ContactNo,Address,Email,Username,Password,Role)VALUES($ID,:OrganizationName,:OrganizationManager,:Logo,:ContactNo,:Address,:Email,:Username,:Password,'Animal Welfare Agency')";
-$query1=$dbh->prepare($sql1); 
-$query1->bindParam(':OrganizationName',$OrganizationName,PDO::PARAM_STR);
-$query1->bindParam(':OrganizationManager',$OrganizationManager,PDO::PARAM_STR);
-$query1->bindParam(':Logo',$Logo,PDO::PARAM_STR);
+$sql1="INSERT INTO pet_adopter(ID,Firstname,Lastname,ContactNo,Address,Email,Username,Password,Role)VALUES($ID,:Firstname,:Lastname,:ContactNo,:Address,:Email,:Username,:Password,'Pet Adopter')";
+$query1=$dbh->prepare($sql1);
+$query1->bindParam(':Firstname',$Firstname,PDO::PARAM_STR);
+$query1->bindParam(':Lastname',$Lastname,PDO::PARAM_STR); 
 $query1->bindParam(':ContactNo',$ContactNo,PDO::PARAM_STR);
 $query1->bindParam(':Address',$Address,PDO::PARAM_STR);
 $query1->bindParam(':Email',$Email,PDO::PARAM_STR);
@@ -51,19 +45,17 @@ $query1->bindParam(':Username',$Username,PDO::PARAM_STR);
 $query1->bindParam(':Password',$Password,PDO::PARAM_STR);
 $query1->execute();
 
-$OrganizationNameOrFirstname=($_POST['OrganizationName']);
-$OrganizationManagerOrLastname=($_POST['OrganizationManager']);
-$Logo=addslashes(file_get_contents($_FILES["Logo"]["tmp_name"])) ;
+$OrganizationNameOrFirstname=($_POST['Firstname']);
+$OrganizationManagerOrLastname=($_POST['Lastname']);
 $AccountContactNo=($_POST['ContactNo']);
 $AccountAddress=($_POST['Address']);
 $AccountEmail=($_POST['Email']);
 $AccountUsername=($_POST['Username']);
 $AccountPassword=($_POST['Password']);
-$sql3="INSERT INTO login(ID,OrganizationNameOrFirstname,OrganizationManagerOrLastname,Image,ContactNo,Address,Email,Username,Password,Role)VALUES($ID,:OrganizationName,:Lastname,:Logo,:ContactNo,:Address,:Email,:Username,:Password,'Animal Welfare Agency')";
+$sql3="INSERT INTO login(ID,OrganizationNameOrFirstname,OrganizationManagerOrLastname,ContactNo,Address,Email,Username,Password,Role)VALUES($ID,:Firstname,:Lastname,:ContactNo,:Address,:Email,:Username,:Password,'Pet Adopter')";
 $query3=$dbh->prepare($sql3); 
-$query3->bindParam(':OrganizationName',$OrganizationNameOrFirstname,PDO::PARAM_STR);
+$query3->bindParam(':Firstname',$OrganizationNameOrFirstname,PDO::PARAM_STR);
 $query3->bindParam(':Lastname',$OrganizationManagerOrLastname,PDO::PARAM_STR);
-$query3->bindParam(':Logo',$Logo,PDO::PARAM_STR);
 $query3->bindParam(':ContactNo',$AccountContactNo,PDO::PARAM_STR);
 $query3->bindParam(':Address',$AccountAddress,PDO::PARAM_STR);
 $query3->bindParam(':Email',$AccountEmail,PDO::PARAM_STR);
@@ -73,6 +65,7 @@ $query3->execute();
 
 echo '<script>alert("Registered Successfully!!!")</script>';
 echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/web/Dashboard.php'</script>";
+
 }
 ?>
 <!doctype html>
@@ -116,23 +109,18 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
           <div class="row justify-content-center">
             <div class="col-md-12">
               <div class="form-block">
-                <form class="login100-form validate-form" method="post" enctype="multipart/form-data"> 
+                <form class="login100-form validate-form" method="post">
                 <div style="text-align:left;margin-top:-50px;margin-bottom:20px;margin-left:-40px;cursor: pointer;"><a onclick="history.back()" class="signup-image-link" ><u><-Back</u></a></div>
 					      <p style="text-align:center;"><img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-top:-80px;" alt=" " class="img-responsive"/></p>
-                    <h2 style="text-align:center;margin-top:-40px;">Animal Welfare Agency</h2>
+                    <h2 style="text-align:center;margin-top:-40px;">Pet Adopter Registration</h2>
 					<br>
 					<div style="text-align: center" class="wrap-input100 validate-input">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="OrganizationName" required="required" placeholder="Organization Name">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Firstname" required="required" placeholder="Firstname">
 					</div><br>
-          <div style="text-align: center" class="wrap-input100 validate-input">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="OrganizationManager" required="required" placeholder="Organization Manager">
+                    <div style="text-align: center" class="wrap-input100 validate-input">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Lastname" required="required" placeholder="Lastname">
 						<span class="focus-input100"></span>
 					</div><br>
-          <div style="text-align: center" class="wrap-input100 validate-input">
-                        <a style="margin-left:-160px;">Upload Logo</a><br><br>
-                        <input type="file" name="Logo" id="Logo" style="width:250px;height:40px;border:none;" placeholder="Upload Logo">
-					</div><br>
-                    
 					<div  style="text-align: center" class="wrap-input100 validate-input">
 						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;font-family:Arial;" type="text" name="ContactNo" onkeypress="isInputNumber(event)" maxlength="11" placeholder="Contact No.">
 						<script>
@@ -153,14 +141,14 @@ echo "<script type ='text/javascript'> document.location='http://localhost/GETPE
 					<div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Email" required="required" placeholder="Email">
 					</div><br>
-          <div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid username is required: ex@abc.xyz">
+                    <div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid username is required: ex@abc.xyz">
 						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Username" required="required" placeholder="Username">
 					</div><br>
 					<div  style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="password" name="Password" required="required" placeholder="Password">
 					</div><br><br>
 					<div style="text-align: center">
-						<button  class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="insert" type="submit" id="insert" value="Insert">
+						<button  class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="insert">
 							<a style="color:White"> Register </a>
 						</button>
 					</div><br>

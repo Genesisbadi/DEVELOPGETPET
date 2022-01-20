@@ -1,10 +1,16 @@
 <?php 
 session_start();
 include('C:\xampp\htdocs\GETPET\includes\config.php');
-if(isset($_POST['PetOwner/Rescuer']))
+if(isset($_POST['PetOwner']))
 {
 	
-   echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/login-form-09/PetOwnerOrRescuerRegistration.php'</script>";
+   echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/login-form-09/PetOwnerRegistration.php'</script>";
+
+}
+if(isset($_POST['PetAdopter']))
+{
+	
+   echo "<script type ='text/javascript'> document.location='http://localhost/GETPET/login-form-09/PetAdopterRegistration.php'</script>";
 
 }
 if(isset($_POST['AnimalWelfareAgency']))
@@ -59,18 +65,23 @@ if(isset($_POST['AnimalWelfareAgency']))
               <form class="login100-form validate-form" method="post">
                     <div style="text-align:left;margin-top:-50px;margin-bottom:20px;margin-left:-40px;cursor: pointer;"><a onclick="history.back()" class="signup-image-link" ><u><-Back</u></a></div>
 					<p style="text-align:center;"><img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-top:-60px;" alt=" " class="img-responsive"/></p><br>
-					<h2 style="text-align:center;margin-top:-40px;">Select Role</h2>
+					<h2 style="text-align:center;margin-top:-40px;">Select Role:</h2>
 					<br><br>
-                    <div style="text-align: center">
-						    <button class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="PetOwner/Rescuer">
-							  <a style="color:White">Pet Owner/Rescuer</a>
+                <div style="text-align: center">
+						    <button class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="PetOwner">
+							  <a style="color:White">Pet Owner</a>
 						    </button>
-					</div><br>
-                    <div style="text-align: center">
+					      </div><br>
+                <div style="text-align: center">
+						    <button class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="PetAdopter">
+							  <a style="color:White">Pet Adopter</a>
+						    </button>
+					      </div><br>
+                <div style="text-align: center">
 						    <button class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="AnimalWelfareAgency">
 							  <a style="color:White">Animal Welfare Agency</a>
 						    </button>
-					</div><br><br>
+					      </div><br>
 	                </form>
               </div>
             </div>
