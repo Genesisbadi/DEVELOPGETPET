@@ -118,7 +118,7 @@ $Date=$query->fetchColumn();
 							<div class="dropdown-menu dropdown-menu-right" style="margin-right: 35px;width:200px;">
 							  <img src="images/logo.png" alt="" style="width:80px;height:80px;margin-left: 60px;margin-top: 20px;border-radius: 50%; border:1px solid silver;" />
 							  <div class="dropdown-divider"></div>
-							  <a class="dropdown-item" href="#"style="color:black;"><div style="text-align: center"><t>Admin</t></div></a>
+							  <a class="dropdown-item" href="#"style="color:black;"><div style="text-align: center"><t>Admin-side</t></div></a>
 							  <div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="#"style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
 							  <div class="dropdown-divider"></div>
