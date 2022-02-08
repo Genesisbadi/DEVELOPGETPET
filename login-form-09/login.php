@@ -177,12 +177,14 @@ if(isset($_POST['login']))
                 <form class="login100-form validate-form" method="post">
                 <div style="text-align:left;margin-top:-50px;margin-bottom:20px;margin-left:-40px;cursor: pointer;"><a onclick="history.back()" class="signup-image-link" ><u><-Back</u></a></div>
 					      <p style="text-align:center;"><img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-top:-80px;" alt=" " class="img-responsive"/></p>
-					      <h2 style="text-align:center;margin-top:-60px;margin-bottom:30px;">Sign In to <strong>GetPet</strong></h2>
+					      <!--<h2 style="text-align:center;margin-top:-60px;margin-bottom:30px;">Sign In to <strong>GetPet</strong></h2>-->
+                <a style="margin-right: 172px;">Username:</a>
 					      <div style="text-align: center" class="wrap-input100 validate-input" data-validate = "Valid username is required: ex@abc.xyz">
-						    <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Username"  required="required" placeholder="Username">
-					      </div><br>
+						    <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Username"  required="required">
+					      </div>
+                <a style="margin-right: 172px;">Password:</a>
 					      <div  style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
-						    <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="password" name="Password" placeholder="Password" required="required" autocomplete="off">
+						    <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="password" name="Password" required="required" autocomplete="off">
 					      </div>
                 <?php
                 date_default_timezone_set("Asia/Manila");
