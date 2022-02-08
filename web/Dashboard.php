@@ -575,7 +575,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 	</div>
 	<!-- //team -->
 
-	<!-- 
+	<!-- //gallery 
 	<div id="gallery" class="gallery">
 		<div class="container">
 			<h3 class="agile-title">Gallery</h3>
@@ -624,7 +624,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-	 -->
+	-->
 
 	<!-- contact -->
 	<div class="contact" id="contact">
