@@ -749,7 +749,7 @@ if($query->rowCount()>0)
 	 -->
 	<!-- //contact -->
 
-	<!-- footer -->
+	<!-- footer 
 	<section class="footer-w3">
 		<div class="container">
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-agile1" data-aos="zoom-in">
@@ -809,6 +809,7 @@ if($query->rowCount()>0)
 			<div class="clearfix"></div>
 		</div>
 	</section>
+	-->
 	<!-- copyright -->
 	<div class="w3layouts_copy_right">
 		<div class="container">
@@ -818,7 +819,7 @@ if($query->rowCount()>0)
 		</div>
 	</div>
 	<!-- //copyright -->
-	<!-- //footer -->
+	
 
 
 	<!-- js -->
