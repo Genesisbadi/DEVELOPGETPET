@@ -304,8 +304,7 @@ if($query->rowCount()>0)
 						</ul>
 					</div>
 					<div class="button-styles">
-						<a href="#" data-toggle="modal" data-target="#myModal2">More Info</a>
-						<a href="#contact" class="button2-w3l scroll">Contact Us</a>
+					<a href="#" data-toggle="modal" data-target="#myModal2" class="button2-w3l scroll">More Info</a>	
 					</div>
 				</div>
 				<div class="clearfix"> </div>
@@ -798,9 +797,9 @@ if($query->rowCount()>0)
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
 							<a href="mailto:king30cinco@gmail.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
-							<!--<a href="#">http://ax.by/zzzz</a>-->
+							<a href="#">http://ax.by/zzzz</a>
 						</p>
-						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
+						<p class="tweet-p2">Posted 3 days ago.</p>
 					</li>
 					
 				</ul>
