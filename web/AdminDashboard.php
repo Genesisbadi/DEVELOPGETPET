@@ -102,9 +102,9 @@ $Date=$query->fetchColumn();
 						<li>
 							<a href="http://localhost/GETPET/web/AdminDashboard.php">Home</a>
 						</li>
-						<li style = "width:160px;">
+						<!--<li style = "width:160px;">
 							<a href="#activity" class="scroll">Activity Log</a>
-						</li>
+						</li>-->
 						<li style = "width:160px;">
 							<a href="#activity" class="scroll">Request</a>
 						</li>
@@ -112,7 +112,7 @@ $Date=$query->fetchColumn();
 							<a href="" class="scroll">Message</a>
 						</li>						
 						<li style = "width:140px;">
-							<a href="" class="scroll">Donations</a>
+							<a href="" class="scroll">Notification</a>
 						</li>
 						<li class="nav-item" style = "width:90px;"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
 							<div class="dropdown-menu dropdown-menu-right" style="margin-right: 35px;width:200px;">
