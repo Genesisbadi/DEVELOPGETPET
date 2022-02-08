@@ -109,12 +109,12 @@ $Date=$query->fetchColumn();
 							<a href="#activity" class="scroll">Request</a>
 						</li>
 						<li style = "width:140px;">
-							<a href="" class="scroll">Message</a>
+							<a href="" class="scroll">Report</a>
 						</li>						
 						<li style = "width:140px;">
 							<a href="" class="scroll">Notification</a>
 						</li>
-						<li class="nav-item" style = "width:90px;"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
+						<li class="nav-item" style = "width:90px; margin-left:120px;"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
 							<div class="dropdown-menu dropdown-menu-right" style="margin-right: 35px;width:200px;">
 							  <img src="images/logo.png" alt="" style="width:80px;height:80px;margin-left: 60px;margin-top: 20px;border-radius: 50%; border:1px solid silver;" />
 							  <div class="dropdown-divider"></div>
