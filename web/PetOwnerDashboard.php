@@ -808,6 +808,7 @@ if($query->rowCount()>0)
 		</div>
 	</section>
 	-->
+	
 	<!-- copyright -->
 	<div class="w3layouts_copy_right">
 		<div class="container">

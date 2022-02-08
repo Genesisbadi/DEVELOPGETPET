@@ -136,7 +136,7 @@ $Date=$query->fetchColumn();
 	<!-- Pet Owner -->
 	<div class="PetOwnerOrRescuer" id="PetOwner"><br><br>
 		<div class="container">
-		<h3 class="agile-title">Animal Welfare Agency</h3>
+		<h3 class="agile-title">Animal Welfare Organization</h3>
 			<div class="w3_agile_services_grids">
             <form action="" method="post">
 <div class="panel-body p-20">
@@ -217,7 +217,7 @@ if(isset($_POST['delete']))
 	</div><br><br>
 	<!-- //Pet Owner -->
 
-	<!-- footer -->
+	<!-- footer 
 	<section class="footer-w3">
 		<div class="container">
 			<div class="col-lg-4 col-md-4 col-sm-4 footer-agile1" data-aos="zoom-in">
@@ -267,23 +267,24 @@ if(isset($_POST['delete']))
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
 							<a href="mailto:support@company.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
-							<!--<a href="#">http://ax.by/zzzz</a>-->
+							<a href="#">http://ax.by/zzzz</a>
 						</p>
-						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
+						<p class="tweet-p2">Posted 3 days ago.</p>
 					</li>
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
 							<a href="mailto:support@company.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
-							<!--<a href="#">http://ax.by/zzzz</a>-->
+							<a href="#">http://ax.by/zzzz</a>
 						</p>
-						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
+						<p class="tweet-p2">Posted 3 days ago.</p>
 					</li>
 				</ul>
 			</div>
 			<div class="clearfix"></div>
 		</div>
 	</section>
+	-->
 	<!-- copyright -->
 	<div class="w3layouts_copy_right">
 		<div class="container">
@@ -293,7 +294,7 @@ if(isset($_POST['delete']))
 		</div>
 	</div>
 	<!-- //copyright -->
-	<!-- //footer -->
+	
 
 
 	<!-- js -->

@@ -79,7 +79,7 @@ if(isset($_POST['AnimalWelfareAgency']))
 					      </div><br>
                 <div style="text-align: center">
 						    <button class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="AnimalWelfareAgency">
-							  <a style="color:White">Animal Welfare Agency</a>
+							  <a style="color:White">Animal Welfare Organization</a>
 						    </button>
 					      </div><br>
 	                </form>
