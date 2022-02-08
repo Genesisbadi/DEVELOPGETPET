@@ -371,7 +371,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/b5.jpg" alt=" " class="img-responsive" />
+							<img src="images/b5.jpg" alt=" " class="img-responsive"/>
 						</div>
 					</div>
 					<fieldset>
@@ -402,7 +402,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<div class="modal-info">
 						<h4>Dog & Cat Life</h4>
-						<img src="images/dc.jpg" alt=" " class="img-responsive" />
+						<img src="images/dc.jpg" alt=" " class="img-responsive"/>
 						<h5>What are the benefits of pet adoption?</h5>
 						<p class="para-agileits-w3layouts">Adopting a pet comes with numerous advantages including:
 
@@ -426,16 +426,111 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<div class="modal-info">
 						<h4>Project Manager</h4>
-						<img src="images/g2.jpg" alt=" " class="img-responsive" />
-						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-						<p class="para-agileits-w3layouts">Duis sit amet nisi quis leo fermentum vestibulum vitae eget augue. Nulla quam nunc, vulputate id urna at, tempor tincidunt
-							metus. Sed feugiat quam nec mauris mattis malesuada.</p>
+						<img src="images/team/jennevive.jpg" alt=" " class="img-responsive"/>
+						<h5>Jennevive Baring</h5>
+						<p class="para-agileits-w3layouts">A project manager oversees different initiatives or projects of a business, 
+														   monitors their progress and completion, and ensures that they meet the expectations 
+														   of the clients. Although a project manager usually doesn’t need to perform the hands-on 
+														   tasks involved in a project, he or she must possess some degree of knowledge with regards 
+														   to the various aspects of a project.</p>
+
+						<p class="para-agileits-w3layouts">From a construction project manager to an IT project manager or junior project manager to 
+														   a senior project manager and everything in between, we've got a sample job description below 
+														   you can use find the right applicant fast.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- //ModalPM -->
+
+	<!-- ModalHacker -->
+	<div class="modal fade" id="hacker" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-info">
+						<h4>Hacker</h4>
+						<img src="images/team/Genesis.jpg" alt=" " class="img-responsive"/>
+						<h5>Genesis Tagsip</h5>
+						<p class="para-agileits-w3layouts">An ethical hacker conducts advanced penetration tests 
+														   to identify vulnerabilities in computer systems, which 
+														   could be penetrated by malicious intruders. This requires 
+														   familiarity with the infrastructure of the company and its 
+														   business operations. It also requires the ability to analyze 
+														   risk assessment and put in place measures to control vulnerable 
+														   areas.</p>
+
+						<p class="para-agileits-w3layouts">The ethical hacker must simulate breaches to network security 
+														   and develop measures to lock down areas of risk. An ethical hacker 
+														   must strive to ensure that any information that could damage the 
+														   reputation or finances of an organization or its clients does not 
+														   fall into the wrong hands.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //ModalHacker -->
+
+	<!-- ModalHipster -->
+	<div class="modal fade" id="hipster" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-info">
+						<h4>Hipster</h4>
+						<img src="images/team/Niel.jpg" alt=" " class="img-responsive"/>
+						<h5>Niel Tatad</h5>
+						<p class="para-agileits-w3layouts">The UI aspects include helping us refine the user interface for users, 
+														   teams, program managers, and visitors on our platform. The applicant should 
+														   have demonstrated experience working on interface design for SaaS platforms, 
+														   and preferably (not required) with some experience with productivity, collaboration,
+														   or social/community software. The designer should be comfortable working with the 
+														   leadership team to integrate business/organization requirements, along with the UX Lead 
+														   and integrating user research into the design, along with working with the developers to 
+														   communicate design requirements. Applicants who pass the first round selection will be 
+														   sent a video walkthrough of the platform to share more details of the project, and to 
+														   discuss project direction and perspectives in greater detail.</p>
+
+					   <p class="para-agileits-w3layouts">The design aspects include refining the branding and creating compelling content for social media, 
+						   								  presentations and training programs, and other design aspects of our work, and both creating original 
+													      content while creating reusable templates to maximize the impact of our work and outputs.</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //ModalHipster -->
+
+	<!-- ModalHuslter -->
+	<div class="modal fade" id="huslter" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-info">
+						<h4>Huslter</h4>
+						<img src="images/team/Novelyn.jpg" alt=" " class="img-responsive"/>
+						<h5>Novelyn Vocales</h5>
+						<p class="para-agileits-w3layouts">A hustler does not give in easily or does not get bogged down by the problems around him. 
+														   On the contrary, a hustler tries to make a way out even though it may be a slow and incremental 
+														   effort process, but keeps doing so and ultimately ends up achieving the goal.</p>
+
+						<p class="para-agileits-w3layouts">Being a hustler is not an easy task it requires you to have a very strong will, be extremely 
+													       positive and have highly committed and disciplined work ethics.</p>							   
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //ModalHuslter -->
 
 	<!-- //blog -->
 
@@ -448,13 +543,13 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						<img src="images/team/jennevive.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 90px;" />
 						<br>
 						<h4 style="margin-left: 200px;"><a href="#" data-toggle="modal" data-target="#PM">Jennevive Baring</a></h4>
-						<p style="margin-left: 160px;">Project Manager</p>
+						<p style="margin-left: 200px;">Project Manager</p>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-6 team-grid w3-agileits">
 						<img src="images/team/Genesis.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 50px;" />
 						<br>
-						<h4 style="margin-left: 170px;"><a href="#" data-toggle="modal" data-target="#myModal2">Genesis Tagsip</a></h4>
+						<h4 style="margin-left: 170px;"><a href="#" data-toggle="modal" data-target="#hacker">Genesis Tagsip</a></h4>
 						<p style="margin-left: 200px;">Hacker</p>
 					<div class="clearfix"> </div>
 				</div>
@@ -463,15 +558,15 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 				<div class="col-md-6 team-grid w3-agileits">
 						<img src="images/team/Niel.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 90px;"/>
 						<br>
-						<h4 style="margin-left: 225px;">Niel Tatad</h4>
-						<p style="margin-left: 240px;">Hipster</p>
+						<h4 style="margin-left: 225px;"><a href="#" data-toggle="modal" data-target="#hipster">Niel Tatad</a></h4>
+						<p style="margin-left: 235px;">Hipster</p>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-6 team-grid w3-agileits">
 						<img src="images/team/Novelyn.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 50px;" />
 						<br>
-						<h4 style="margin-left: 170px;">Novelyn Vocales</h4>
-						<p style="margin-left: 200px;">Huslter</p>
+						<h4 style="margin-left: 170px;"><a href="#" data-toggle="modal" data-target="#huslter">Novelyn Vocales</a></h4>
+						<p style="margin-left: 205px;">Huslter</p>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>
@@ -562,11 +657,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 					<h4>
 						<i class="fa fa-envelope-o" aria-hidden="true"></i>G-MAIL</h4>
 					<p>
-						<a href="mailto:info@example.com">GetPet@gmail.com</a>
-					</p>
-					<p>
-						<a href="mailto:info@example.com">WeAreGetPet@gmail.com</a>
-						<a href="mailto:king30cinco@gmail.com">GetPet@gmail.com</a>
+						<a href="mailto::king30cinco@gmail.com">GetPet@gmail.com</a>
 					</p>
 					<p>
 						<a href="mailto:king30cinco@gmail.com">WeAreGetPet@gmail.com</a>
