@@ -458,12 +458,12 @@ if($query->rowCount()>0)
 				</div>
 				
 		</div>
-		<div class="w3l-img-side">
+		<!--<div class="w3l-img-side">
 			<img src="images/cat11.png" alt="" />
 		</div>
 		<div class="w3l-img-side w3l-img-side2">
 			<img src="images/dog1.jpg" alt="" />
-		</div>
+		</div>-->
 	</div><br><br>
 	<!-- //services -->
 
