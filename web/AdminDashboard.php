@@ -105,13 +105,13 @@ $Date=$query->fetchColumn();
 						<!--<li style = "width:160px;">
 							<a href="#activity" class="scroll">Activity Log</a>
 						</li>-->
-						<li style = "width:160px;">
+						<li style = "width:160px; margin-left:-15px;">
 							<a href="#activity" class="scroll">Request</a>
 						</li>
-						<li style = "width:140px;">
+						<li style = "width:160px; margin-left:-15px;">
 							<a href="" class="scroll">Report</a>
 						</li>						
-						<li style = "width:140px;">
+						<li style = "width:160px; margin-left:-15px;">
 							<a href="" class="scroll">Notification</a>
 						</li>
 						<li class="nav-item" style = "width:90px; margin-left:120px;"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
