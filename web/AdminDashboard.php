@@ -418,6 +418,8 @@ if(isset($_POST['insert']))
 		</div>
 	</section>
 	-->
+	<br>
+	<br>
 	<!-- copyright -->
 	<div class="w3layouts_copy_right">
 		<div class="container">
