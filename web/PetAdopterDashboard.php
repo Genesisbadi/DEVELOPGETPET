@@ -290,7 +290,7 @@ if($query->rowCount()>0)
 						<p>“Such short little lives our pets have to spend with us, and they spend most of it waiting for us to come home each day. 
 							It is amazing how much love and laughter they bring into our lives and even how much closer we become with each other because of them.”</p>
 						<ul>
-							<li>
+						<li>
 								<i class="glyphicon glyphicon-ok"></i>Pet Information</li>
 							<li>
 								<i class="glyphicon glyphicon-ok"></i>Animal Care Tips</li>
