@@ -243,18 +243,18 @@ if($query->rowCount()>0)
 							<a href="http://localhost/GETPET/web/PetAdopterDashboard.php">Home</a>
 						</li>
 						<li style = "width:150px;">
-							<a href="#about" class="scroll">About Us</a>
+							<a href="#about" class="scroll">Dashboard</a>
 						</li>
 						<li style = "width:150px;">
-							<a href="#services" class="scroll">Services</a>
+							<a href="#services" class="scroll">About Us</a>
 						</li>
-						<li style = "width:150px;">
+						<!--<li style = "width:150px;">
 							<a href="#team" class="scroll">Our Team</a>
 						</li>
 						<li style = "width:150px;">
 							<a href="#contact" class="scroll">Contact Us</a>
-						</li>
-						<li class="nav-item" style = "width:150px;"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
+						</li>-->
+						<li class="nav-item" style = "width:150px; margin-left:250px"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
 							<div class="dropdown-menu dropdown-menu-right" style="margin-right: 35px;width:200px;">
 							  <img src="images/default_profile.png" alt="" style="width:80px;height:80px;margin-left: 60px;margin-top: 20px;border-radius: 50%;" />
 							  <div class="dropdown-divider"></div>
@@ -321,11 +321,11 @@ if($query->rowCount()>0)
 	
 	<!-- //Signup -->
 
-	<!-- middle slider -->
+	<!-- middle slider 
 	<div class="w3agile-spldishes">
 		<div class="container">
 			<div class="spldishes-grids">
-				<!-- Owl-Carousel -->
+				<!-- Owl-Carousel 
 				<div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
 					<a class="item g1">
 						<img class="lazyOwl" src="images/d1.jpg" title="Cat Life" alt="" />
@@ -350,9 +350,9 @@ if($query->rowCount()>0)
 			</div>
 		</div>
 	</div>
-	<!-- //middle slider -->
-
-	<!-- middle section -->
+	 -->
+	 
+	<!-- middle section 
 	<div class="middle-w3l">
 		<div class="container">
 		<h2><div style="border:solid #00cdc1; outline:#00cdc1 solid 1px; color: black; background: #ffffff; opacity: .6;">Get to know everything about your pets!</div></h2>
@@ -361,12 +361,12 @@ if($query->rowCount()>0)
 			</div>
 		</div>
 	</div>
-	<!-- //middle section -->
+	 -->
 
 	<!-- services -->
 	<div class="services" id="services">
 		<div class="container">
-			<h3 class="agile-title">Services Overview</h3>
+			<h3 class="agile-title">Dashboard</h3>
 			<div class="w3_agile_services_grids">
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid " data-aos="zoom-in">
 					<div class="ih-item circle effect1 agile_services_grid">
@@ -376,8 +376,10 @@ if($query->rowCount()>0)
 						</div>
 					</div>
 					<fieldset>
-						<legend>Pet Information</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<legend>Tips & Advice</legend>
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
@@ -388,8 +390,10 @@ if($query->rowCount()>0)
 						</div>
 					</div>
 					<fieldset>
-						<legend>Animal Care Tips</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<legend>Articles</legend>
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
@@ -401,7 +405,9 @@ if($query->rowCount()>0)
 					</div>
 					<fieldset>
 						<legend>Short-Term Care</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
 					</fieldset>
 				</div>
 				<div class="clearfix"> </div>
@@ -416,7 +422,9 @@ if($query->rowCount()>0)
 					</div>
 					<fieldset>
 						<legend>Pets for Adoption</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
@@ -427,10 +435,27 @@ if($query->rowCount()>0)
 						</div>
 					</div>
 					<fieldset>
-						<legend>Donation and fundraising activities</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<legend>Donation</legend>
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
 					</fieldset>
 				</div>
+				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
+					<div class="ih-item circle effect1 agile_services_grid">
+						<div class="spinner"></div>
+						<div class="img">
+							<img src="images/b5.jpg" alt=" " class="img-responsive" />
+						</div>
+					</div>
+					<fieldset>
+						<legend>Fund-raising</legend>
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
+					</fieldset>
+				</div>
+				
 		</div>
 		<div class="w3l-img-side">
 			<img src="images/cat11.png" alt="" />
@@ -451,11 +476,15 @@ if($query->rowCount()>0)
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<div class="modal-info">
-						<h4>Cat Life</h4>
-						<img src="images/g2.jpg" alt=" " class="img-responsive" />
-						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-						<p class="para-agileits-w3layouts">Duis sit amet nisi quis leo fermentum vestibulum vitae eget augue. Nulla quam nunc, vulputate id urna at, tempor tincidunt
-							metus. Sed feugiat quam nec mauris mattis malesuada.</p>
+						<h4>Dog & Cat Life</h4>
+						<img src="images/dc.jpg" alt=" " class="img-responsive" />
+						<h5>What are the benefits of pet adoption?</h5>
+						<p class="para-agileits-w3layouts">Adopting a pet comes with numerous advantages including:
+
+							<p>1. You’re saving a life. Millions of healthy, adoptable pets are euthanized every year simply for a lack of a home. When you adopt your pet from a shelter or rescue group, you’re giving a deserving pet a loving home.</p>
+							<p>2. Many adoptable pets are already trained.</p>
+							<p>3. When you adopt an older pet, you will often get a sense of their personality and temperament. You also already know their full grown size!</p>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -577,7 +606,7 @@ if($query->rowCount()>0)
 
 	<!-- //blog -->
 
-	<!-- team -->
+	<!-- team 
 	<div class="team" id="team">
 		<div class="container">
 			<h3 class="agile-title">Our Team</h3>
@@ -616,7 +645,7 @@ if($query->rowCount()>0)
 			</div>
 		</div>
 	</div>
-	<!-- //team -->
+	team -->
 
 	<!-- 
 	<div id="gallery" class="gallery">
@@ -669,7 +698,7 @@ if($query->rowCount()>0)
 	</div>
 	 -->
 
-	<!-- contact -->
+	<!-- contact 
 	<div class="contact" id="contact">
 		<div class="container">
 			<h3 class="agile-title">Contact Us</h3>
@@ -709,6 +738,7 @@ if($query->rowCount()>0)
 			</div>
 		</div>
 	</div>
+				-->
 	<!-- 
 	<div class="map-w3ls">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22702.22744502486!2d11.113366067229226!3d44.662878362361056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fc3eca9065c15%3A0x12ec8a03aadae866!2s40019+Sant&#39;Agata+Bolognese+BO%2C+Italy!5e0!3m2!1sen!2sin!4v1451281303075"
@@ -766,19 +796,12 @@ if($query->rowCount()>0)
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:support@company.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
+							<a href="mailto:king30cinco@gmail.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
 							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
 						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
 					</li>
-					<li>
-						<i class="fa fa-twitter-square" aria-hidden="true"></i>
-						<p class="tweet-p1">
-							<a href="mailto:support@company.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
-							<!--<a href="#">http://ax.by/zzzz</a>-->
-						</p>
-						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
-					</li>
+					
 				</ul>
 			</div>
 			<div class="clearfix"></div>
