@@ -244,10 +244,10 @@ if($query->rowCount()>0)
 							<a href="http://localhost/GETPET/web/PetOwnerDashboard.php">Home</a>
 						</li>
 						<li style = "width:150px;">
-							<a href="#about" class="scroll">Dashboard</a>
+							<a href="#services" class="scroll">Dashboard</a>
 						</li>
 						<li style = "width:150px;">
-							<a href="#services" class="scroll">About Us</a>
+							<a href="#about" class="scroll">About Us</a>
 						</li>
 						<!--<li style = "width:150px;">
 							<a href="#team" class="scroll">Our Team</a>
