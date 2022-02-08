@@ -161,7 +161,6 @@ $Date=$query->fetchColumn();
 <tbody>
 <?php
 $sql="SELECT * from login WHERE (Date) = (CURDATE())";
-$sql="SELECT * from registered";
 $query=$dbh->prepare($sql);
 $query->execute();
 $results=$query->fetchALL(PDO::FETCH_OBJ);

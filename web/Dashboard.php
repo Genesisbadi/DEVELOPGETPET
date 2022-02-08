@@ -217,15 +217,15 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 							It is amazing how much love and laughter they bring into our lives and even how much closer we become with each other because of them.”</p>
 						<ul>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Pet Health Monitoring</li>
+								<i class="glyphicon glyphicon-ok"></i>Pet Information</li>
 							<li>
 								<i class="glyphicon glyphicon-ok"></i>Animal Care Tips</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Donation and Volunteers</li>
+							    <i class="glyphicon glyphicon-ok"></i>Short-Term Care</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Animal help Services</li>
+							    <i class="glyphicon glyphicon-ok"></i>Pets for Adoption</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Post Pets for Adoption</li>
+								<i class="glyphicon glyphicon-ok"></i>Donation and fundraising activities</li>
 						</ul>
 					</div>
 					<div class="button-styles">
@@ -302,7 +302,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						</div>
 					</div>
 					<fieldset>
-						<legend>Service 1</legend>
+						<legend>Pet Information</legend>
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
 					</fieldset>
 				</div>
@@ -314,7 +314,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						</div>
 					</div>
 					<fieldset>
-						<legend>Service 2</legend>
+						<legend>Animal Care Tips</legend>
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
 					</fieldset>
 				</div>
@@ -326,7 +326,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						</div>
 					</div>
 					<fieldset>
-						<legend>Service 3</legend>
+						<legend>Short-Term Care</legend>
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
 					</fieldset>
 				</div>
@@ -341,7 +341,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						</div>
 					</div>
 					<fieldset>
-						<legend>Service 4</legend>
+						<legend>Pets for Adoption</legend>
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
 					</fieldset>
 				</div>
@@ -353,24 +353,10 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						</div>
 					</div>
 					<fieldset>
-						<legend>Service 5</legend>
+						<legend>Donation and fundraising activities</legend>
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
 					</fieldset>
 				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-					<div class="ih-item circle effect1 agile_services_grid">
-						<div class="spinner"></div>
-						<div class="img">
-							<img src="images/c6.jpg" alt=" " class="img-responsive" />
-						</div>
-					</div>
-					<fieldset>
-						<legend>Service 6</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
-					</fieldset>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
 		</div>
 		<div class="w3l-img-side">
 			<img src="images/cat11.png" alt="" />
@@ -378,7 +364,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 		<div class="w3l-img-side w3l-img-side2">
 			<img src="images/dog1.jpg" alt="" />
 		</div>
-	</div>
+	</div><br><br>
 	<!-- //services -->
 
 	<!-- blog -->
@@ -449,7 +435,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						<img src="images/team/Niel.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 90px;"/>
 						<br>
 						<h4 style="margin-left: 225px;">Niel Tatad</h4>
-						<p style="margin-left: 240px;">Tester</p>
+						<p style="margin-left: 240px;">Hipster</p>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-6 team-grid w3-agileits">
@@ -617,19 +603,12 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:support@company.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
+							<a href="mailto:king30cinco@gmail.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
 							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
 						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
 					</li>
-					<li>
-						<i class="fa fa-twitter-square" aria-hidden="true"></i>
-						<p class="tweet-p1">
-							<a href="mailto:support@company.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
-							<!--<a href="#">http://ax.by/zzzz</a>-->
-						</p>
-						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
-					</li>
+					
 				</ul>
 			</div>
 			<div class="clearfix"></div>

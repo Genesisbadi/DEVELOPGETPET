@@ -139,7 +139,7 @@ $Date=$query->fetchColumn();
 	<div class="services" id="activity">
 	<form class="login100-form validate-form" method="post">
 		<div class="container">
-		<h3 class="agile-title">Activity Log</h3>
+		<h3 class="agile-title">Dashboard</h3>
 			<div class="w3_agile_services_grids">
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid " data-aos="zoom-in">
 					<div class="ih-item circle effect1 agile_services_grid">
@@ -406,21 +406,12 @@ if(isset($_POST['insert']))
 					<li>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<p class="tweet-p1">
-							<a href="mailto:support@company.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
 							<a href="mailto:king30cinco@gmail.com">GetPet@twitter.com</a> ADOPTING IS MORE AFFORDABLE.
 							<!--<a href="#">http://ax.by/zzzz</a>-->
 						</p>
 						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
 					</li>
-					<li>
-						<i class="fa fa-twitter-square" aria-hidden="true"></i>
-						<p class="tweet-p1">
-							<a href="mailto:support@company.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
-							<a href="mailto:king30cinco@gmail.com">WeAreGetPet@twitter.com</a> YOU GET A SUPPORT SYSTEM.
-							<!--<a href="#">http://ax.by/zzzz</a>-->
-						</p>
-						<!--<p class="tweet-p2">Posted 3 days ago.</p>-->
-					</li>
+					
 				</ul>
 			</div>
 			<div class="clearfix"></div>

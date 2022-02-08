@@ -290,18 +290,16 @@ if($query->rowCount()>0)
 						<p>“Such short little lives our pets have to spend with us, and they spend most of it waiting for us to come home each day. 
 							It is amazing how much love and laughter they bring into our lives and even how much closer we become with each other because of them.”</p>
 						<ul>
-						    <li>
-								<i class="glyphicon glyphicon-ok"></i>Pet Health Monitoring</li>
+							<li>
+								<i class="glyphicon glyphicon-ok"></i>Pet Information</li>
 							<li>
 								<i class="glyphicon glyphicon-ok"></i>Animal Care Tips</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Donation and Volunteers</li>
+							    <i class="glyphicon glyphicon-ok"></i>Short-Term Care</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Animal help Services</li>
+							    <i class="glyphicon glyphicon-ok"></i>Pets for Adoption</li>
 							<li>
-								<i class="glyphicon glyphicon-ok"></i>Post Pets for Adoption</li>
-							<li>
-								<i class="glyphicon glyphicon-ok"></i>Market Place</li>
+								<i class="glyphicon glyphicon-ok"></i>Donation and fundraising activities</li>
 						</ul>
 					</div>
 					<div class="button-styles">
@@ -378,7 +376,7 @@ if($query->rowCount()>0)
 						</div>
 					</div>
 					<fieldset>
-						<legend>Service 1</legend>
+						<legend>Pet Information</legend>
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
 					</fieldset>
 				</div>
@@ -390,7 +388,7 @@ if($query->rowCount()>0)
 						</div>
 					</div>
 					<fieldset>
-						<legend>Service 2</legend>
+						<legend>Animal Care Tips</legend>
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
 					</fieldset>
 				</div>
@@ -402,7 +400,7 @@ if($query->rowCount()>0)
 						</div>
 					</div>
 					<fieldset>
-						<legend>Service 3</legend>
+						<legend>Short-Term Care</legend>
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
 					</fieldset>
 				</div>
@@ -417,7 +415,7 @@ if($query->rowCount()>0)
 						</div>
 					</div>
 					<fieldset>
-						<legend>Service 4</legend>
+						<legend>Pets for Adoption</legend>
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
 					</fieldset>
 				</div>
@@ -429,24 +427,10 @@ if($query->rowCount()>0)
 						</div>
 					</div>
 					<fieldset>
-						<legend>Service 5</legend>
+						<legend>Donation and fundraising activities</legend>
 						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
 					</fieldset>
 				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-					<div class="ih-item circle effect1 agile_services_grid">
-						<div class="spinner"></div>
-						<div class="img">
-							<img src="images/c6.jpg" alt=" " class="img-responsive" />
-						</div>
-					</div>
-					<fieldset>
-						<legend>Service 6</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
-					</fieldset>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
 		</div>
 		<div class="w3l-img-side">
 			<img src="images/cat11.png" alt="" />
@@ -454,7 +438,7 @@ if($query->rowCount()>0)
 		<div class="w3l-img-side w3l-img-side2">
 			<img src="images/dog1.jpg" alt="" />
 		</div>
-	</div>
+	</div><br><br>
 	<!-- //services -->
 
 	<!-- blog -->
