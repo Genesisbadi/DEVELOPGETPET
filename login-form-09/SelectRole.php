@@ -64,9 +64,9 @@ if(isset($_POST['AnimalWelfareAgency']))
               <div class="form-block">
               <form class="login100-form validate-form" method="post">
                     <div style="text-align:left;margin-top:-50px;margin-bottom:20px;margin-left:-40px;cursor: pointer;"><a onclick="history.back()" class="signup-image-link" ><u><-Back</u></a></div>
-					<p style="text-align:center;"><img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-top:-60px;" alt=" " class="img-responsive"/></p><br>
+					<p style="text-align:center;"><img src="images/Logo/Logo.png" style="width:250px;height:250px;margin-top:-60px;" alt=" " class="img-responsive"/></p>
 					<h2 style="text-align:center;margin-top:-40px;">Select Role:</h2>
-					<br><br>
+					<br>
                 <div style="text-align: center">
 						    <button class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="PetOwner">
 							  <a style="color:White">Pet Owner</a>
