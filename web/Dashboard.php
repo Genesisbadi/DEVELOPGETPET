@@ -298,7 +298,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 					<div class="ih-item circle effect1 agile_services_grid">
 						<div class="spinner"></div>
 						<div class="img">
-							<img src="images/b1.jpg" alt=" " class="img-responsive" />
+							<img src="images/b1.jpg" alt=" " class="img-responsive"/>
 						</div>
 					</div>
 					<fieldset>
@@ -383,12 +383,12 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 				</div>
 				
 		</div>
-		<div class="w3l-img-side">
+		<!--<div class="w3l-img-side">
 			<img src="images/cat11.png" alt="" />
 		</div>
 		<div class="w3l-img-side w3l-img-side2">
 			<img src="images/dog1.jpg" alt="" />
-		</div>
+		</div>-->
 	</div><br><br>
 	<!-- //services -->
 
