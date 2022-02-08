@@ -192,21 +192,21 @@ if(isset($_POST['login']))
                 <div hidden style="text-align: center" class="wrap-input100 validate-input" data-validate="Password is required">
 						    <input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" name="Date" required="required" value="<?php echo date('Y-m-d'); ?>" autocomplete="off">
 					      </div><br>
-					      <div style="text-align: center" class="flex-sb-m w-full p-t-3 p-b-32">
+					      <!--<div style="text-align: center" class="flex-sb-m w-full p-t-3 p-b-32">
 						    <div class="contact100-form-checkbox">
 							  <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
 							  <label class="label-checkbox100" for="ckb1">
 								Remember me
 							  </label>
 						    </div>
-				 	      </div><br>
+				 	      </div><br>-->
 					      <div style="text-align: center">
 						    <button  class="login100-form-btn" style="background-color:#00cdc1;width:250px;height:40px;border:none;" name="login">
-							  <a style="color:White"> Login </a>
+							  <a style="color:White"> Sign in </a>
 						    </button>
 					      </div>
                 <div class="text-center" style="margin-top: 25px;">
-                        <a href="http://localhost/GETPET/login-form-09/SelectRole.php" class="signup-image-link" ><u>Create an account</u></a>
+                        <a href="#" class="signup-image-link" ><u>Forgot Password?</u></a>
                     </div>
 	                </form>
               </div>
