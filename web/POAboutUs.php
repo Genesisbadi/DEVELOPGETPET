@@ -1,8 +1,8 @@
 <?php 
 session_start();
-include('C:\xampp\htdocs\GETPET\includes\config.php');
+include('C:\xampp\htdocs\GETPET\includes\config.php');	
 $ID=$_SESSION['ID'];
-$sql = "SELECT * from pet_owner where ID=:ID";
+$sql = "SELECT * from animal_welfare_agency where ID=:ID";
 $query=$dbh->prepare($sql);
 $query->bindParam(':ID',$ID,PDO::PARAM_STR);
 $query->execute();
@@ -18,11 +18,12 @@ if($query->rowCount()>0)
 <?php
 ?>
 <?php }} ?>
+
 <?php
 if(isset($_POST['update']))
 {
-$OrganizationNameOrFirstname=($_POST['Firstname']);
-$OrganizationManagerOrLastname=($_POST['Lastname']);
+$OrganizationNameOrFirstname=($_POST['OrganizationName']);
+$OrganizationManagerOrLastname=($_POST['OrganizationManager']);
 $AccountContactNo=($_POST['ContactNo']);
 $AccountAddress=($_POST['Address']);
 $AccountEmail=($_POST['Email']);
@@ -41,19 +42,19 @@ $query->bindParam(':Username',$AccountUsername,PDO::PARAM_STR);
 $query->bindParam(':Password',$AccountPassword,PDO::PARAM_STR);
 $query->execute();
 
-$Firstname=($_POST['Firstname']);
-$Lastname=($_POST['Lastname']);
+$OrganizationName=($_POST['OrganizationName']);
+$OrganizationManager=($_POST['OrganizationManager']);
 $ContactNo=($_POST['ContactNo']);
 $Address=($_POST['Address']);
 $Email=($_POST['Email']);
 $Username=($_POST['Username']);
 $Password=($_POST['Password']);
 
-$sql1="update pet_owner set Firstname=:Firstname,Lastname=:Lastname,ContactNo=:ContactNo,Address=:Address,Email=:Email,Username=:Username,Password=:Password where ID=:ID";
+$sql1="update animal_welfare_agency set OrganizationName=:OrganizationName,OrganizationManager=:OrganizationManager,ContactNo=:ContactNo,Address=:Address,Email=:Email,Username=:Username,Password=:Password where ID=:ID";
 $query1=$dbh->prepare($sql1); 
 $query1->bindParam(':ID',$ID,PDO::PARAM_STR); 
-$query1->bindParam(':Firstname',$Firstname,PDO::PARAM_STR);
-$query1->bindParam(':Lastname',$Lastname,PDO::PARAM_STR);
+$query1->bindParam(':OrganizationName',$OrganizationName,PDO::PARAM_STR);
+$query1->bindParam(':OrganizationManager',$OrganizationManager,PDO::PARAM_STR);
 $query1->bindParam(':ContactNo',$ContactNo,PDO::PARAM_STR);
 $query1->bindParam(':Address',$Address,PDO::PARAM_STR);
 $query1->bindParam(':Email',$Email,PDO::PARAM_STR);
@@ -61,18 +62,18 @@ $query1->bindParam(':Username',$Username,PDO::PARAM_STR);
 $query1->bindParam(':Password',$Password,PDO::PARAM_STR);
 $query1->execute();
 
-$OrganizationNameOrFirstname=($_POST['Firstname']);
-$OrganizationManagerOrLastname=($_POST['Lastname']);
+$OrganizationNameOrFirstname=($_POST['OrganizationName']);
+$OrganizationManagerOrLastname=($_POST['OrganizationManager']);
 $AccountContactNo=($_POST['ContactNo']);
 $AccountAddress=($_POST['Address']);
 $AccountEmail=($_POST['Email']);
 $AccountUsername=($_POST['Username']);
 $AccountPassword=($_POST['Password']);
 
-$sql3="update login set OrganizationNameOrFirstname=:Firstname,OrganizationManagerOrLastname=:Lastname,ContactNo=:ContactNo,Address=:Address,Email=:Email,Username=:Username,Password=:Password where ID=:ID";
+$sql3="update login set OrganizationNameOrFirstname=:OrganizationName,OrganizationManagerOrLastname=:Lastname,ContactNo=:ContactNo,Address=:Address,Email=:Email,Username=:Username,Password=:Password where ID=:ID";
 $query3=$dbh->prepare($sql3); 
 $query3->bindParam(':ID',$ID,PDO::PARAM_STR);
-$query3->bindParam(':Firstname',$OrganizationNameOrFirstname,PDO::PARAM_STR);
+$query3->bindParam(':OrganizationName',$OrganizationNameOrFirstname,PDO::PARAM_STR);
 $query3->bindParam(':Lastname',$OrganizationManagerOrLastname,PDO::PARAM_STR);
 $query3->bindParam(':ContactNo',$AccountContactNo,PDO::PARAM_STR);
 $query3->bindParam(':Address',$AccountAddress,PDO::PARAM_STR);
@@ -83,7 +84,7 @@ $query3->execute();
 {
 echo '<script>alert("Your Account Updated Successfully!!!")</script>';
 $ID=$_SESSION['ID'];
-$sql = "SELECT * from pet_owner where ID=:ID";
+$sql = "SELECT * from animal_welfare_agency where ID=:ID";
 $query=$dbh->prepare($sql);
 $query->bindParam(':ID',$ID,PDO::PARAM_STR);
 $query->execute();
@@ -147,7 +148,7 @@ if($query->rowCount()>0)
 			<div class="header">
 				<div class="logo" style="width:200px;height:200px;">
 					<h1>
-						<a href="http://localhost/GETPET/web/PetOwnerDashboard.php">
+						<a href="http://localhost/GETPET/web/AnimalWelfareAgencyDashboard.php">
 							<img class="logo-img center-block" src="images/Logo/Logo.png" alt="" style="width:250px;height:250px;margin-left: -60px;margin-top: -50px;" />
 						</a>
 					</h1>
@@ -240,7 +241,7 @@ if($query->rowCount()>0)
 				</div>
 				<div class='collapse navbar-collapse'>
 					<ul>
-						<li style = "width:150px;">
+                    <li style = "width:150px;">
 							<a href="http://localhost/GETPET/web/PetOwnerDashboard.php">Home</a>
 						</li>
 						<!--<li style = "width:150px;">
@@ -259,23 +260,23 @@ if($query->rowCount()>0)
 							<div class="dropdown-menu dropdown-menu-right" style="margin-right: 35px;width:200px;">
 							  <img src="images/default_profile.png" alt="" style="width:80px;height:80px;margin-left: 60px;margin-top: 20px;border-radius: 50%;" />
 							  <div class="dropdown-divider"></div>
-							  <a class="dropdown-item" href="" data-toggle="modal" data-target="#Profile" style="color:black;"><div style="text-align: center"><t><?php echo ($result->Firstname);?> <?php echo ($result->Lastname);?></div></t></a>
+							  <a class="dropdown-item" href="" data-toggle="modal" data-target="#Profile" style="color:black;"><div style="text-align: center"><t><?php echo ($result->OrganizationName);?></div></t></a>
 							  <div style="text-align: center; margin-top:-30px;"><t ><?php echo ($result->Role);?></t></div>
 							  <div class="dropdown-divider"></div>
-							  <a href="" data-toggle="modal" data-target="#Profile" style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
+							<a class="dropdown-item" href="" data-toggle="modal" data-target="#Profile" style="color:black;"><t style="margin-left: 10px;">Profile</t></a>
 							  <div class="dropdown-divider"></div>
-							  <a class="dropdown-item" href="" data-toggle="modal" data-target="#Settings"style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
+							  <a class="dropdown-item" href="" data-toggle="modal" data-target="#Settings" style="color:black;"><t style="margin-left: 10px;">Settings</t></a>
 							  <div class="dropdown-divider"></div>
 							  <a class="dropdown-item" href="http://localhost/GETPET/web/Dashboard.php" style="color:black;"><t style="margin-left: 10px;">Log out</t></a>
 						</div></li>
                     </ul>
 				</div>
 			</div>
-		</nav> 
+		</nav>
 	</div>
 	<!-- //sticky navigation -->
 
-	<!-- welcome 
+	<!-- welcome -->
 	<div class="about" id="about">
 		<div class="container">
 			<h3 class="agile-title">Welcome To GetPet</h3>
@@ -304,14 +305,14 @@ if($query->rowCount()>0)
 						</ul>
 					</div>
 					<div class="button-styles">
-					<a href="#" data-toggle="modal" data-target="#myModal2" class="button2-w3l scroll">More Info</a>	
+						<a href="#" data-toggle="modal" data-target="#myModal2" class="button2-w3l scroll">More Info</a>						
 					</div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	-->
+	<!-- //welcome -->
 	
 	<!-- Login -->
 	
@@ -363,7 +364,7 @@ if($query->rowCount()>0)
 	</div>
 	 -->
 
-	<!-- services -->
+	<!-- services 
 	<div class="services" id="services">
 		<div class="container">
 			<h3 class="agile-title">Dashboard</h3>
@@ -463,7 +464,8 @@ if($query->rowCount()>0)
 		<div class="w3l-img-side w3l-img-side2">
 			<img src="images/dog1.jpg" alt="" />
 		</div>-->
-	<!-- //services -->
+	</div><br><br>
+	 -->
 
 	<!-- blog -->
 	
@@ -501,12 +503,13 @@ if($query->rowCount()>0)
 					<div class="modal-info">
 						<h1 style="text-align: center">Profile</h1 >
 						<img src="images/default_profile.png" alt="" class="img-responsive" style="width:150px;height:150px;margin-left:190px;margin-top: 20px;border-radius: 50%;" /><br>
-						<h3 style="margin-left: 10px;">Full Name:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->Firstname);?>&nbsp<?php echo ($result->Lastname);?></h3><br>
-						<h3 style="margin-left: 10px;">Contact No:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <?php echo ($result->ContactNo);?></h3><br>
-						<h3 style="margin-left: 10px;">Address:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->Address);?></h3><br>
-						<h3 style="margin-left: 10px;">Email:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->Email);?></h3><br>
-						<h3 style="margin-left: 10px;">Username:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp<?php echo ($result->Username);?></h3><br>
-						<h3 style="margin-left: 10px;">Role:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->Role);?></h3><br>
+						<h3 style="margin-left: 10px;">Organization Name:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->OrganizationName);?></h3><br>
+						<h3 style="margin-left: 10px;">Organization Manager:&nbsp &nbsp &nbsp &nbsp <?php echo ($result->OrganizationManager);?></h3><br>
+						<h3 style="margin-left: 10px;">Contact No:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->ContactNo);?></h3><br>
+						<h3 style="margin-left: 10px;">Address:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp<?php echo ($result->Address);?></h3><br>
+						<h3 style="margin-left: 10px;">Email:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp<?php echo ($result->Email);?></h3><br>
+						<h3 style="margin-left: 10px;">Username:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->Username);?></h3><br>
+						<h3 style="margin-left: 10px;">Role:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<?php echo ($result->Role);?></h3><br>
 					</div>
 				</div>
 			</div>
@@ -536,10 +539,10 @@ if($query->rowCount()>0)
 					    <input type="hidden" name="ID" value="<?php echo ( $result->ID);?>" required = "required" class="form-control" id="success">
 					</div><br>
 					<div style="text-align: center" class="wrap-input100 validate-input">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Firstname" required="required" value="<?php echo ($result->Firstname);?>" placeholder="Organization Name">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Firstname" required="required" value="<?php echo ($result->OrganizationName);?>" placeholder="Organization Name">
 					</div><br>
 					<div style="text-align: center" class="wrap-input100 validate-input">
-						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Lastname" required="required" value="<?php echo ($result->Lastname);?>" placeholder="Organization Manager">
+						<input class="input100" style="background-color:#f1f1f1;width:250px;height:40px;border:none;" type="text" name="Lastname" required="required" value="<?php echo ($result->OrganizationManager);?>" placeholder="Organization Manager">
 						<span class="focus-input100"></span>
 					</div><br>
 					<div  style="text-align: center" class="wrap-input100 validate-input">
@@ -807,7 +810,6 @@ if($query->rowCount()>0)
 		</div>
 	</section>
 	-->
-	
 	<!-- copyright -->
 	<div class="w3layouts_copy_right">
 		<div class="container">

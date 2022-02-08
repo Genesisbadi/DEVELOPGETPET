@@ -244,16 +244,16 @@ if($query->rowCount()>0)
 						<li style = "width:150px;">
 							<a href="http://localhost/GETPET/web/AnimalWelfareAgencyDashboard.php">Home</a>
 						</li>
-						<li style = "width:150px;">
+						<!--<li style = "width:150px;">
 							<a href="#services" class="scroll">Dashboard</a>
+						</li>-->
+						<li style = "width:150px;">
+							<a href="http://localhost/GETPET/web/AWOAboutUs.php">About Us</a>
 						</li>
 						<li style = "width:150px;">
-							<a href="#about" class="scroll">About Us</a>
+							<a href="#team" class="scroll">Notification</a>
 						</li>
 						<!--<li style = "width:150px;">
-							<a href="#team" class="scroll">Our Team</a>
-						</li>
-						<li style = "width:150px;">
 							<a href="#contact" class="scroll">Contact Us</a>
 						</li>-->
 						<li class="nav-item" style = "width:150px; margin-left:250px"><a class="nav-link" href="#" data-toggle="dropdown">Acount</a>
@@ -276,7 +276,7 @@ if($query->rowCount()>0)
 	</div>
 	<!-- //sticky navigation -->
 
-	<!-- welcome -->
+	<!-- welcome 
 	<div class="about" id="about">
 		<div class="container">
 			<h3 class="agile-title">Welcome To GetPet</h3>
@@ -312,7 +312,7 @@ if($query->rowCount()>0)
 			</div>
 		</div>
 	</div>
-	<!-- //welcome -->
+	-->
 	
 	<!-- Login -->
 	
