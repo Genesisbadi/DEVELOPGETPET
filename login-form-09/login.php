@@ -151,6 +151,7 @@ if(isset($_POST['login']))
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 
+
     <title>GetPet</title>
     <style>
      .content{
