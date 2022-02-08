@@ -180,7 +180,6 @@ if($query->rowCount()>0)
 <td><?php echo '<img src="data:image/jpeg/png;base64,'.base64_encode($result->Logo).'" width="75"; height="80">';?></td>
 <td><?php echo htmlentities($result->Email);?></td>
 <td><?php echo htmlentities($result->Role);?></td>                                  
-<td><input type="submit" name="delete" value="Delete" name="ID[]" onclick="return confirm('Are you sure do you want to DELETE this data entry?')" class="btn btn-danger"></td> 
 <td><input type="submit" name="delete" value="Delete" name="ID[]" onclick="return confirm('Are you sure you want to delete this data?')" class="btn btn-danger"></td> 
 </tr>
 <?php $cnt=$cnt+1;}} ?>
