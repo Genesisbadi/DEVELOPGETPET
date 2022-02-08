@@ -278,7 +278,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 	</div>
 	<!-- //middle slider -->
 
-	<!-- middle section -->
+	<!-- middle section 
 	<div class="middle-w3l">
 		<div class="container">
 			<h2><div style="border:solid #00cdc1; outline:#00cdc1 solid 1px; color: black; background: #ffffff; opacity: .6;">Get to know everything about your pets!</div></h2>
@@ -287,12 +287,12 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 			</div>
 		</div>
 	</div>
-	<!-- //middle section -->
+	 -->
 
 	<!-- services -->
 	<div class="services" id="services">
 		<div class="container">
-			<h3 class="agile-title">Services Overview</h3>
+			<h3 class="agile-title">Dashboard</h3>
 			<div class="w3_agile_services_grids">
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid " data-aos="zoom-in">
 					<div class="ih-item circle effect1 agile_services_grid">
@@ -302,8 +302,10 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						</div>
 					</div>
 					<fieldset>
-						<legend>Pet Information</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<legend>Tips & Advice</legend>
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
@@ -314,8 +316,10 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						</div>
 					</div>
 					<fieldset>
-						<legend>Animal Care Tips</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<legend>Articles</legend>
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
@@ -327,7 +331,9 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 					</div>
 					<fieldset>
 						<legend>Short-Term Care</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
 					</fieldset>
 				</div>
 				<div class="clearfix"> </div>
@@ -342,7 +348,9 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 					</div>
 					<fieldset>
 						<legend>Pets for Adoption</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
 					</fieldset>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
@@ -353,10 +361,27 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						</div>
 					</div>
 					<fieldset>
-						<legend>Donation and fundraising activities</legend>
-						consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
+						<legend>Donation</legend>
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
 					</fieldset>
 				</div>
+				<div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
+					<div class="ih-item circle effect1 agile_services_grid">
+						<div class="spinner"></div>
+						<div class="img">
+							<img src="images/b5.jpg" alt=" " class="img-responsive" />
+						</div>
+					</div>
+					<fieldset>
+						<legend>Fund-raising</legend>
+						<div class="button-styles">
+						<a href="#contact" class="button2-w3l scroll">More info</a>
+						</div>
+					</fieldset>
+				</div>
+				
 		</div>
 		<div class="w3l-img-side">
 			<img src="images/cat11.png" alt="" />
@@ -376,11 +401,15 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<div class="modal-info">
-						<h4>Cat Life</h4>
-						<img src="images/g2.jpg" alt=" " class="img-responsive" />
-						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-						<p class="para-agileits-w3layouts">Duis sit amet nisi quis leo fermentum vestibulum vitae eget augue. Nulla quam nunc, vulputate id urna at, tempor tincidunt
-							metus. Sed feugiat quam nec mauris mattis malesuada.</p>
+						<h4>Dog & Cat Life</h4>
+						<img src="images/dc.jpg" alt=" " class="img-responsive" />
+						<h5>What are the benefits of pet adoption?</h5>
+						<p class="para-agileits-w3layouts">Adopting a pet comes with numerous advantages including:
+
+							<p>1. You’re saving a life. Millions of healthy, adoptable pets are euthanized every year simply for a lack of a home. When you adopt your pet from a shelter or rescue group, you’re giving a deserving pet a loving home.</p>
+							<p>2. Many adoptable pets are already trained.</p>
+							<p>3. When you adopt an older pet, you will often get a sense of their personality and temperament. You also already know their full grown size!</p>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -419,7 +448,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						<img src="images/team/jennevive.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 90px;" />
 						<br>
 						<h4 style="margin-left: 200px;"><a href="#" data-toggle="modal" data-target="#PM">Jennevive Baring</a></h4>
-						<p style="margin-left: 160px;">Project Manager & Hustler</p>
+						<p style="margin-left: 160px;">Project Manager</p>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-6 team-grid w3-agileits">
@@ -442,7 +471,7 @@ include('C:\xampp\htdocs\GETPET\includes\config.php');
 						<img src="images/team/Novelyn.jpg" alt=" " class="img-responsive" style="width:350px;height:350px;margin-left: 50px;" />
 						<br>
 						<h4 style="margin-left: 170px;">Novelyn Vocales</h4>
-						<p style="margin-left: 200px;">Hipster</p>
+						<p style="margin-left: 200px;">Huslter</p>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>
